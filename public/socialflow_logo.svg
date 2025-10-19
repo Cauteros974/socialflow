@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="SocialFlow logo">
+  <title>SocialFlow logo</title>
+  <!-- Transparent background (default) -->
+  <!-- Wave icon -->
+  <g transform="translate(600,200)">
+    <path d="
+      M -360 40
+      C -270 -40, -180 -40, -120 10
+      C -60 60, 30 80, 120 40
+      C 180 15, 240 -10, 330 10
+      C 390 25, 390 60, 330 80
+      C 210 110, 90 100, -30 80
+      C -120 65, -210 85, -360 40
+      Z"
+      fill="#8CCAF0" />
+  </g>
+
+  <!-- Text: SocialFlow -->
+  <text x="600" y="460" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="600" font-size="78" fill="#1F2937">
+    SocialFlow
+  </text>
+</svg>
