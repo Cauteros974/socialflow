@@ -11,6 +11,7 @@ const getUserFromStorage = (): AppUser[] => {
     return users ? JSON.parse(users): [];
 };
 
+/*Saving users to localStorage*/
 const saveUsersToStorage = (users: AppUser[]) => {
     localStorage.setItem('user', JSON.stringify(users));
 };
