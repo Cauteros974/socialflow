@@ -1,5 +1,5 @@
-import { RegisterFormValues, LoginFormValues } from "../types/authSchemas";
-import { AppUser } from "../types/user";
+import { RegisterFormValues, LoginFormValues } from '../types/authSchemas';
+import { AppUser } from '../types/user';
 
 //Simulating network latency
 const simulateDelay = (ms: number) => 
