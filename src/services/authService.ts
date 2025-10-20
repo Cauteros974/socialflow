@@ -68,3 +68,10 @@ export const logoutUser = async (): Promise<void> => {
     await simulateDelay(300);
     setCurrentUserInStorage(null);
 };
+
+/*Getting the current user from localStorage (Mock)*/
+
+export const getAppUser = (): AppUser | null => {
+    const user = localStorage.getItem('currentUser');
+    return user ? JSON.parse(user): null;
+};
