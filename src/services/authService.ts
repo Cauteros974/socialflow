@@ -39,4 +39,12 @@ export const registerUser = async(
         photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
         bio: '',
     };
-}
+
+    users.push(newUser);
+    saveUsersToStorage(users);
+
+    setCurrentUserInStorage(newUser);
+    return newUser;
+};
+
+/* Logins(Mock)*/
