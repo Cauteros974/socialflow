@@ -11,6 +11,10 @@ const getUserFromStorage = (): AppUser[] => {
     return users ? JSON.parse(users): [];
 };
 
+const saveUsersToStorage = (users: AppUser[]) => {
+    localStorage.setItem('user', JSON.stringify(users));
+};
+
 const setCurrentUserInStorage = (user: AppUser | null) => {
     if(user){
         localStorage.setItem('currentUser', JSON.stringify(user));
@@ -35,7 +39,7 @@ export const registerUser = async (
         uid: `mock_${Date.now()}`,
         email: data.email,
         displayName: data.displayName,
-        photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
+        photoUrl: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
         bio: '',
     };
 
