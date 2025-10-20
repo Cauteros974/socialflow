@@ -1,6 +1,6 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-export default registerSchema = z.object({
+export const registerSchema = z.object({
     displayName: z
         .string()
         .min(3, 'The name must be at least 3 characters long.')
