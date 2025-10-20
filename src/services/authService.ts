@@ -19,4 +19,13 @@ const setCurrentUserInStorage = (user: AppUser | null) => {
     }
 };
 
-//
+//Registration(Mock)
+
+export const registerUser = async(
+    data: RegisterFormValues
+): Promise<AppUser> => {
+    await simulateDelay(1000);
+    const users = getUserFromStorage();
+
+    
+}
