@@ -31,8 +31,8 @@ export const registerUser = async (
         throw new Error('User with this email already exists.')
     }
 
-    const newUser: AppUser {
-        uid: `mock_${Data.now()}`,
+    const newUser: AppUser  = {
+        uid: `mock_${Date.now()}`,
         email: data.email,
         displayName: data.displayName,
         photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
