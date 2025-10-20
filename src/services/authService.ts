@@ -1,3 +1,4 @@
+import { email } from "zod";
 import { RegisterFormValues, LoginFormValues } from "../types/authSchemas";
 import { AppUser } from "../types/user";
 
@@ -30,4 +31,12 @@ export const registerUser = async(
     if(users.find((u) => u.email === data.email)){
         throw new Error('User with this email already exists.')
     }
+
+    const newUser: AppUser {
+        uid: `mock_${Data.now()}`,
+        email: data.email,
+        displayName: data.displayName,
+        photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
+        bio: '',
+    };
 }
