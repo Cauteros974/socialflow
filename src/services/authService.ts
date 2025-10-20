@@ -46,7 +46,7 @@ export const registerUser = async (
     return newUser;
 };
 
-/* Logins(Mock)*/
+/* LogIn (Mock)*/
 
 export const loginUser = async (data: LoginFormValues): Promise<AppUser> => {
     await simulateDelay(1000);
@@ -60,4 +60,11 @@ export const loginUser = async (data: LoginFormValues): Promise<AppUser> => {
 
     setCurrentUserInStorage(user);
     return user;
-}
+};
+
+/* LogOut (Mock)*/
+
+export const logoutUser = async (): Promise<void> => {
+    await simulateDelay(300);
+    setCurrentUserInStorage(null);
+};
