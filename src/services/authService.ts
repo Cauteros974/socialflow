@@ -51,4 +51,13 @@ export const registerUser = async (
 export const loginUser = async (data: LoginFormValues): Promise<AppUser> => {
     await simulateDelay(1000);
     const users = getUserFromStorage();
+
+    const user = users.find((u) => u.email === data.email);
+
+    if(!user) {
+        throw new Error ('Wrong Email or Password');
+    }
+
+    setCurrentUserInStorage(user);
+    return user;
 }
