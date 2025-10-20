@@ -27,5 +27,7 @@ export const registerUser = async(
     await simulateDelay(1000);
     const users = getUserFromStorage();
 
-    
+    if(users.find((u) => u.email === data.email)){
+        throw new Error('User with this email already exists.')
+    }
 }
