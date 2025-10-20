@@ -12,5 +12,8 @@ const getUserFromStorage = (): AppUser[] => {
 const setCurrentUserInStorage = (user: AppUser | null) => {
     if(user){
         localStorage.setItem('currentUser', JSON.stringify(user));
+    } else{
+        localStorage.removeItem('currentUser');
     }
-}
+};
+
