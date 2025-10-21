@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import { getAppUser } from './services/authService';
+import { useAuthStore } from './store/useAuthStore';
+import { Toaster } from 'react-hot-toast';
+import { AppRouter } from './routes/AppRouter';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const setUser = useAuthStore((state) => state.setUser);
+  const setLoading = useAuthStore((state) => state.setLoading);
+
+  useEffect(() => {
+    try {
+      const appUser = getAppUser();
+      if (appUser) {
+        setUser(appUser);
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      console.error("Session restore error:", error);
+      setUser(null);
+    }
+    
+    setLoading(false);
+    
+  }, [setUser, setLoading]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Toaster 
+        position="top-right" 
+        toastOptions={{
+          duration: 3000,
+        }}
+      />
+      <AppRouter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
