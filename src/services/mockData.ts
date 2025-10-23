@@ -18,3 +18,6 @@ const uploadImage = (file: File): Promise<string> => {
     });
 };
 
+export const storageService = {
+    uploadImage,
+};
