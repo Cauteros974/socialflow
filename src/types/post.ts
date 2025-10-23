@@ -1,4 +1,4 @@
-import { type Author} from './user';
+import { type AppUser} from './user';
 import { type Comment } from './comment';
 
 /**
@@ -9,7 +9,7 @@ export interface Post {
     id: string;
     text: string;
     imageUrl: string | null;
-    author: Author;
+    author: AppUser;
     likes: string[];
     comments: Comment[];
     createdAt: number;

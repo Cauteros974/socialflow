@@ -1,4 +1,4 @@
-export interface Author {
+export interface AppUser {
     uid: string;
     email: string;
     displayName: string;
