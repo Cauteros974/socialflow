@@ -9,5 +9,5 @@ export interface Comment {
     id: string;
     text: string;
     author: CommentAuthor;
-    createAt: string;
+    createAt: number;
 }
