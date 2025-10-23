@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast';
 import { 
     loginSchema,
     type LoginFormValues, 
-} from '../types/authSchemas';
+} from '../types/schemas';
 import { loginUser } from '../services/authService';
 
 

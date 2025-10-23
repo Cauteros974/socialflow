@@ -1,4 +1,4 @@
-import { type RegisterFormValues, type LoginFormValues } from '../types/authSchemas';
+import { type RegisterFormValues, type LoginFormValues } from '../types/schemas';
 import { type AppUser } from '../types/user';
 
 //Simulating network latency
