@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Home = () => {
-  return <div>Главная страница (Лента)</div>;
+  return <div>Home Page (Feed)</div>;
 };
