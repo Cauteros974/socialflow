@@ -1,13 +1,8 @@
-import { type AppUser } from "./user";
-
-export type CommentAuthor = Pick<
-  AppUser,
-  'uid' | 'displayName'
->;
+import { type Author } from './user';
 
 export interface Comment {
-    id: string;
-    text: string;
-    author: CommentAuthor;
-    createAt: number;
+  id: string;
+  text: string;
+  author: Author;
+  createdAt: number;
 }
