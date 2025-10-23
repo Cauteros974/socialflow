@@ -5,6 +5,7 @@ import { authService } from './services/authService';
 import { AppRouter } from './routes/AppRouter';
 import { Loader2 } from 'lucide-react';
 
+
 function App() {
   // 1. Getting state and actions from stores
   const { setUser, isLoading, setLoading } = useAuthStore();

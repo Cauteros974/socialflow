@@ -40,7 +40,7 @@ export const registerUser = async (
         uid: `mock_${Date.now()}`,
         email: data.email,
         displayName: data.displayName,
-        photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
+        photoUrl: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
         bio: '',
     };
 
