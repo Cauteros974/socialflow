@@ -1,6 +1,17 @@
-/*import React from "react";
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useAuthStore } from "../store/useAuthStore";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { LoginPage } from '../pages/LoginPage';
+import { FeedPage } from '../pages/FeedPage';
+import { useAuthStore } from '../store/useAuthStore';
 
-import { Home } from "../pages/Home";
-import { Login } from "../pages/Login";*/
+export const AppRouter = () => {
+    const { user } = useAuthStore();
+
+    return(
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />}
+                
+            </Routes>
+        </BrowserRouter>
+    );
+} ;
