@@ -18,5 +18,26 @@ export const FeedPage = () => {
         await createPost({ text, imageUrl, author: user });
         setText('');
         setImage(null);
-    }
+    };
+    
+    if (isLoading) return <p className="text-center">Loading Posts...</p>
+
+    return (
+        <div className="max-w-md mx-auto mt-6 space-y-4">
+            <form onSubmit={handleSubmit} className="border rounded p-4">
+                <textarea 
+                    className="w-full border p-2 rounded"
+                    placeholder="What's new with you?"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+
+                <input 
+                    type="file"
+                    accept="image/+"
+                    onChange={(e) => setImage(e.target.value)}
+                />
+            </form>
+        </div>
+    );
 }
