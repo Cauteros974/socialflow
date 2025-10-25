@@ -9,8 +9,8 @@ export const AppRouter = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />}
-                
+                <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />} />
+                <Route path="/feed" element={user ? <FeedPage /> : <Navigate to="/" />} />
             </Routes>
         </BrowserRouter>
     );
