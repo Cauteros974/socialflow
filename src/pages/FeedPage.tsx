@@ -35,7 +35,7 @@ export const FeedPage = () => {
                 <input 
                     type="file"
                     accept="image/+"
-                    onChange={(e) => setImage(e.target.value)}
+                    onChange={(e) => setImage(e.target.files?.[0] || null)}
                 />
             </form>
         </div>
