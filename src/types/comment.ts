@@ -1,8 +1,8 @@
-import { type AppUser } from './user';
+import { type PostAuthor } from './post';
 
 export interface Comment {
   id: string;
   text: string;
-  author: AppUser;
+  author: PostAuthor;
   createdAt: number;
 }
