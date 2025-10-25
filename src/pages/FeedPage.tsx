@@ -10,4 +10,13 @@ export const FeedPage = () => {
     const { user } = useAuthStore();
     const [text, setText] = useState('');
     const [image, setImage] = useState<File | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if(!user) return;
+        const imageUrl = image ? await storageService.uploadImage(image) : null;
+        await createPost({ text, imageUrl, author: user });
+        setText('');
+        setImage(null);
+    }
 }
