@@ -54,3 +54,10 @@ export const toggleLikePost = async (
   }
   return post;
 };
+
+/*Combine everything into a single service*/
+export const postService = {
+  fetchPosts,
+  createPost,
+  toggleLikePost,
+};
