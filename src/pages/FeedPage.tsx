@@ -57,7 +57,10 @@ export const FeedPage = () => {
                         <span className="font-semibold">{post.author.displayName}</span>
                     </div>
                     <p>{post.text}</p>
+                    {post.imageUrl} && (
+                        <img src={post.imageUrl} alt="" className="mt-2 rounded" />
+                    )
             ))}
         </div>
     );
-}
+};
