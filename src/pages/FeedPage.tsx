@@ -37,7 +37,21 @@ export const FeedPage = () => {
                     accept="image/+"
                     onChange={(e) => setImage(e.target.files?.[0] || null)}
                 />
+
+                <button
+                    type="submit"
+                    className="bg-blue-500 text-while p-2 rounded mt-2"
+                >
+                    Publish
+                </button>
             </form>
+
+            {posts?.map((post) =>(
+                <div key={post.id} className="border p-3 rounded">
+                    <div className="flex items-center gap-2 mb-2">
+                        
+                    </div>
+            ))}
         </div>
     );
 }
