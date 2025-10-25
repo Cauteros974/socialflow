@@ -42,6 +42,7 @@ export const registerUser = async (
         displayName: data.displayName,
         photoUrl: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
         bio: '',
+        createdAt: Date.now(),
     };
 
     users.push(newUser);

@@ -1,4 +1,4 @@
-import { Post, PostAuthor } from '../types/post';
+import { type Post, type PostAuthor } from '../types/post';
 import { mockPosts } from './mockData';
 
 const simulateDelay = (ms: number) =>
@@ -26,7 +26,7 @@ export const createPost = async (data: CreatePostData): Promise<Post> => {
     text: data.text,
     imageUrl: data.imageUrl,
     author: data.author,
-    createdAt: new Date().toISOString(),
+    createdAt: Date.now(),
     likes: [],
     comments: [],
   };
