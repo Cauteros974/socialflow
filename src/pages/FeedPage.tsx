@@ -49,8 +49,14 @@ export const FeedPage = () => {
             {posts?.map((post) =>(
                 <div key={post.id} className="border p-3 rounded">
                     <div className="flex items-center gap-2 mb-2">
-                        
+                        <img
+                            src={post.author.photoURL}
+                            alt={post.author.displayName}
+                            className="w-8 h-8 rounded-full"
+                        />
+                        <span className="font-semibold">{post.author.displayName}</span>
                     </div>
+                    <p>{post.text}</p>
             ))}
         </div>
     );
