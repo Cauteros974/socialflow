@@ -81,3 +81,10 @@ export const getAppUser = (): AppUser | null => {
     const user = localStorage.getItem('currentUser');
     return user ? JSON.parse(user): null;
 };
+
+export const authService = {
+    registerUser,
+    loginUser,
+    logoutUser,
+    getAppUser,
+};

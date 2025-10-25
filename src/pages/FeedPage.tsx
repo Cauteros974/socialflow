@@ -48,7 +48,7 @@ export const FeedPage = () => {
         <div key={post.id} className="border p-3 rounded">
           <div className="flex items-center gap-2 mb-2">
             <img
-              src={post.author.photoURL}
+              src={post.author.photoUrl}
               alt={post.author.displayName}
               className="w-8 h-8 rounded-full"
             />
