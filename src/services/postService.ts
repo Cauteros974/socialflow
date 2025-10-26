@@ -1,4 +1,5 @@
-import { type Post, type PostAuthor } from '../types/post';
+import { type Post } from '../types/post';
+import { type AppUser } from '../types/user';
 import { mockPosts } from './mockData';
 
 const simulateDelay = (ms: number) =>
@@ -13,7 +14,7 @@ const fetchPosts = async (): Promise<Post[]> => {
 interface CreatePostData {
   text: string;
   imageUrl: string | null;
-  author: PostAuthor;
+  author: AppUser;
 }
 
 const createPost = async (data: CreatePostData): Promise<Post> => {
@@ -45,7 +46,6 @@ const toggleLikePost = async (postId: string, userId: string): Promise<Post> => 
   return post;
 };
 
-// New method to get one post
 const fetchPostById = async (postId: string): Promise<Post> => {
   await simulateDelay(400);
   const post = mockPosts.find((p) => p.id === postId);
@@ -53,10 +53,30 @@ const fetchPostById = async (postId: string): Promise<Post> => {
   return post;
 };
 
-// Combine them into a single service
+const addCommentToPost = async (
+  postId: string,
+  data: { text: string; author: AppUser }
+): Promise<{ id: string; text: string; author: AppUser; createdAt: number }> => {
+  await simulateDelay(300);
+
+  const post = mockPosts.find((p) => p.id === postId);
+  if (!post) throw new Error('Post not found');
+
+  const newComment = {
+    id: `comment_${Date.now()}`,
+    text: data.text,
+    author: data.author,
+    createdAt: Date.now(),
+  };
+
+  post.comments.push(newComment);
+  return newComment;
+};
+
 export const postService = {
   fetchPosts,
   fetchPostById,
   createPost,
   toggleLikePost,
+  addCommentToPost,
 };
