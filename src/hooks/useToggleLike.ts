@@ -22,7 +22,9 @@ export const useToggleLike = (postId: string) => {
                 if(!old) return old;
                 const has = old.likes.includes(currentUserId);
                 return { ...old, likes: has ? old.likes.filter((id) => id !== currentUserId) : [...old.likes, currentUserId] };
-            }
-        }
+            };
+            qc.setQueryData(['post', postId], optimisticUpdate);
+            qc.setQueryData(['posts'], (old: Post[]|undefined) => old?.map(p => p.id === postId ? optimisticUpdate(p) as Post : p));
+        },
     })
 }
