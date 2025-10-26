@@ -82,6 +82,7 @@ export const getAppUser = (): AppUser | null => {
     return user ? JSON.parse(user): null;
 };
 
+/* Get user profile by ID (Mock) */
 export const getUserProfile = async (userId: string): Promise<AppUser | null> => {
     await simulateDelay(500);
     const users = getUserFromStorage();
