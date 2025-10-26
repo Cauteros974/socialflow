@@ -26,5 +26,6 @@ export const useToggleLike = (postId: string) => {
             qc.setQueryData(['post', postId], optimisticUpdate);
             qc.setQueryData(['posts'], (old: Post[]|undefined) => old?.map(p => p.id === postId ? optimisticUpdate(p) as Post : p));
         },
-    })
-}
+        onError: () => { qc.invalidateQueries({ queryKey: ['posts'] }); qc.invalidateQueries({ queryKey: ['post', postId]});},
+    });
+};
