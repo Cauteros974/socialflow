@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { postService } from '../services/postService';
 
-export const usePost = (userId: string) =>
+export const useUserPosts = (userId: string) =>
   useQuery({
-    queryKey: ['user', userId],
+    queryKey: ['posts', 'user', userId],
     queryFn: () => postService.fetchPostById(userId),
     enabled: !!userId,
 });
