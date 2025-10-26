@@ -88,3 +88,10 @@ export const authService = {
     logoutUser,
     getAppUser,
 };
+
+export const getUserProfile = async (userId: string): Promise<AppUser | null> => {
+    await simulateDelay(500);
+    const users = getUserFromStorage();
+    const user = users.find((u) => u.uid === userId);
+    return user || null;
+};
