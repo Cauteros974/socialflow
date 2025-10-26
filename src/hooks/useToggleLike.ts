@@ -14,7 +14,15 @@ export const useToggleLike = (postId: string) => {
             if (!currentUserId) { toast.error('You need to log in to like'); throw new Error('Not auth'); }
             return postService.toggleLikePost(postId, currentUserId);
         },
-
-        
+        onMutate: async () => {
+            if (!currentUserId) return;
+            await qc.cancelQueries({ queryKey: ['post', postId] });
+            await qc.cancelQueries({ queryKey: ['posts'] });
+            const optimisticUpdate = (old?: Post) => {
+                if(!old) return old;
+                const has = old.likes.includes(currentUserId);
+                return { ...old, likes: has ? old.likes.filter((id) => id !== currentUserId) : [...old.likes, currentUserId] };
+            }
+        }
     })
 }
