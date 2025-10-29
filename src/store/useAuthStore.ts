@@ -7,6 +7,7 @@ interface AuthState {
   setUser: (user: AppUser | null) => void;
   setLoading: (isLoading: boolean) => void;
   updateUser: (data: Partial<AppUser>) => void;
+  logout: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -15,4 +16,5 @@ export const useAuthStore = create<AuthState>((set) => ({
   setUser: (user) => set({ user, isLoading: false }),
   setLoading: (isLoading) => set({ isLoading }),
   updateUser: (data) => set((state) => ({ user: state.user ? { ...state.user, ...data } : null })),
+  logout: () => set({ user: null}),
 }));
