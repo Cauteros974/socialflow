@@ -17,6 +17,10 @@ export const ProfilePage = () => {
             <div className="flex justify-center py-10">
                 <Loader2 className="animate-spin" size={28} />
             </div>
-        )
+        );
+    }
+
+    if(!user) {
+        return <p style={{ textAlign: 'center', color: 'var(--text-secondary)'}}>User not found</p>
     }
 }
