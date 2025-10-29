@@ -14,7 +14,10 @@ export const Sidebar = () => {
                 <button onClick={toggleTheme}>
                     🌗 Switch Theme ({theme})
                 </button>
+                <button onClick={logout} className="text-red-500 mt-4">
+                    🚪 LogOut
+                </button>
             </nav>
         </aside>
     );
-}
+};
