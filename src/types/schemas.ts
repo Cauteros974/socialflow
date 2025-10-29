@@ -25,6 +25,10 @@ export const editProfileSchema = z.object({
     .string()
     .max(160, { message: 'Bio must be at most 160 characters long.' })
     .optional(),
+  photoUrl: z
+    .string()
+    .url({ message: 'Invalid image URL.' })
+    .optional(),
 })
 
 export type RegisterFormValues = z.infer<typeof registerSchema>;
