@@ -11,4 +11,12 @@ export const ProfilePage = () => {
     const { uid } = useParams <{ uid: string}>();
     const { data: user, isLoading: userLoading } = useUserPosts(uid!);
     const { data: posts, isLoading: postsLoading } = useUserPosts(uid!);
+
+    if(userLoading || postsLoading) {
+        return(
+            <div className="flex justify-center py-10">
+                <Loader2 className="animate-spin" size={28} />
+            </div>
+        )
+    }
 }
