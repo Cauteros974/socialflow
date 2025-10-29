@@ -16,6 +16,7 @@ export const loginSchema = z.object({
   password: z.string().min(1, { message: 'The password cannot be empty.' }),
 });
 
+
 export const editProfileSchema = z.object({
   displayName: z
     .string()
@@ -27,6 +28,7 @@ export const editProfileSchema = z.object({
     .optional(),
   photoUrl: z
     .string()
+    .url({ message: 'Invalid image URL.' })
     .optional(),
 });
 
