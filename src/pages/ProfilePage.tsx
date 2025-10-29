@@ -21,6 +21,13 @@ export const ProfilePage = () => {
     }
 
     if(!user) {
-        return <p style={{ textAlign: 'center', color: 'var(--text-secondary)'}}>User not found</p>
+        return <p style={{ textAlign: 'center', color: 'var(--text-secondary)'}}>User not found</p>;
     }
-}
+
+    return(
+        <div style={{ maxWidth: 800, margin: '0 auto', padding: '1rem'}}>
+            <ProfileHeader profile={user} postCount={posts?.length || 0} />
+            <PostGrid posts={posts || []} />
+        </div>
+    );
+};
