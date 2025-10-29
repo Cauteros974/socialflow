@@ -100,7 +100,17 @@ const updateUserProfile = async (
     await simulateDelay(500);
     const users = getUserFromStorage();
     const index = users.findIndex((u) => u.uid === userId);
-}
+
+    if (index === -1) throw new Error('User not found');
+    
+    const updatedUser = { ...users[index], ...data };
+    users[index] = updatedUser;
+    
+    saveUsersToStorage(users);
+    setCurrentUserInStorage(updatedUser);  
+    
+    return updatedUser;
+};
 
 export const authService = {
     registerUser,
