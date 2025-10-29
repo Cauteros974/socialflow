@@ -21,6 +21,10 @@ export const editProfileSchema = z.object({
     .string()
     .min(3, { message: 'The name must be at least 3 characters long.' })
     .max(20, { message: 'The name must be at most 20 characters long.' }),
+  bio: z
+    .string()
+    .max(160, { message: 'Bio must be at most 160 characters long.' })
+    .optional(),
 })
 
 export type RegisterFormValues = z.infer<typeof registerSchema>;
