@@ -83,12 +83,15 @@ export const getAppUser = (): AppUser | null => {
 };
 
 /* Get user profile by ID (Mock) */
-export const getUserProfile = async (userId: string): Promise<AppUser | null> => {
-    await simulateDelay(500);
+const getUserProfile = async (userId: string): Promise<AppUser> => {
+    await simulateDelay(300);
     const users = getUserFromStorage();
     const user = users.find((u) => u.uid === userId);
-    return user || null;
-};
+    if (!user) throw new Error('User not found');
+    return user;
+}
+
+
 
 export const authService = {
     registerUser,

@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { authService } from '../services/authService';
 import { useAuthStore } from '../store/useAuthStore';
-import { EditProfileSchema } from '../types/schemas';
+import { type EditProfileSchema } from '../types/schemas';
 import { toast } from 'react-hot-toast';
 import { getErrorMessage } from '../utils/handleError';
 
