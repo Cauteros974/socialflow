@@ -27,9 +27,9 @@ export const editProfileSchema = z.object({
     .optional(),
   photoUrl: z
     .string()
-    .url({ message: 'Invalid image URL.' })
     .optional(),
-})
+});
 
+export type EditProfileSchema = z.infer<typeof editProfileSchema>;
 export type RegisterFormValues = z.infer<typeof registerSchema>;
 export type LoginFormValues = z.infer<typeof loginSchema>;
