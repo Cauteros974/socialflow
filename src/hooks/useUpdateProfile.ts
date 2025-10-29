@@ -14,7 +14,7 @@ export const useUpdateProfile = (userId: string) => {
       updateUserInStore(updatedUser);
       qc.setQueryData(['userProfile', userId], updatedUser);
       qc.invalidateQueries({ queryKey: ['posts'] });
-      toast.success('Профиль успешно обновлен!');
+      toast.success('Profile updated successfully!');
     },
     onError: (err) => toast.error(getErrorMessage(err)),
   });
