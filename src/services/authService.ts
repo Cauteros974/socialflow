@@ -118,4 +118,5 @@ export const authService = {
     logoutUser,
     getAppUser,
     getUserProfile,
+    updateUserProfile,
 };
