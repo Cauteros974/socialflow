@@ -91,7 +91,16 @@ const getUserProfile = async (userId: string): Promise<AppUser> => {
     return user;
 }
 
+/* Update profile (mock) */
 
+const updateUserProfile = async (
+    userId: string,
+    data: Partial<AppUser>
+): Promise<AppUser> => {
+    await simulateDelay(500);
+    const users = getUserFromStorage();
+    const index = users.findIndex((u) => u.uid === userId);
+}
 
 export const authService = {
     registerUser,
