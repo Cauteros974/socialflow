@@ -5,4 +5,6 @@ export interface AppUser {
     photoUrl: string;
     bio: string;
     createdAt: number;
-};
+  }
+  
+export type Author = Pick<AppUser, 'uid' | 'displayName' | 'photoUrl'>;  
