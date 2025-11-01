@@ -1,5 +1,9 @@
 import { type RegisterFormValues, type LoginFormValues } from '../types/schemas';
 import { type AppUser } from '../types/user';
+import { initialUsers, simulateDelay, mockPosts } from './mockData';
+
+const USERS_STORAGE_KEY = 'socialflow-users';
+const CURRENT_USER_STORAGE_KEY = 'socialflow-currentUser';
 
 //Simulating network latency
 const simulateDelay = (ms: number) =>
