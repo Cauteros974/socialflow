@@ -112,6 +112,16 @@ const updateUserProfile = async (
     return updatedUser;
 };
 
+getAppUserFromStorage: (): AppUser | null => {
+    const userJson = localStorage.getItem('appUser');
+    if (!userJson) return null;
+    try {
+        return JSON.parse(userJson);
+    } catch {
+        return null;
+    }
+};
+
 export const authService = {
     registerUser,
     loginUser,
