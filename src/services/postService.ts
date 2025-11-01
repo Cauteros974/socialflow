@@ -13,3 +13,8 @@ export const fetchPostById = async (id: string): Promise<Post | null> => {
   const p = mockPosts.find((x) => x.id === id);
   return p ? { ...p } : null;
 };
+
+export const fetchPostsByUserId = async (userId: string): Promise<Post[]> => {
+  await simulateDelay(300);
+  return mockPosts.filter((p) => p.author.uid === userId).sort((a,b) => b.createdAt - a.createdAt);
+};
