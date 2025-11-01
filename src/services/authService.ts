@@ -11,8 +11,10 @@ const simulateDelay = (ms: number) =>
 
 //"user database" in localStorage
 const getUserFromStorage = (): AppUser[] => {
-    const users = localStorage.getItem('user');
-    return users ? JSON.parse(users): [];
+    const usersJson = localStorage.getItem('USERS_STORAGE_KEY');
+    if (usersJson) return JSON.parse(usersJson);
+    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(initialUsers));
+    return initialUsers;
 };
 
 /*Saving users to localStorage*/
