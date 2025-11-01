@@ -16,8 +16,9 @@ export const AppRouter = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<MainLayout />}>
-                    <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />} />
-                    <Route path="/feed" element={user ? <FeedPage /> : <Navigate to="/" />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/post/:id" element={<PostDetailPage />} />
+                    <Route path="/profile/:uid" element={<ProfilePage />} />
                 </Route>
                 
             </Routes>
