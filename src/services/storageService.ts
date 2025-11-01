@@ -1,13 +1,8 @@
-export const uploadImage = (file: File): Promise<string> => {
-    return new Promise((resolve) => {
-
-      const blobUrl = URL.createObjectURL(file);
-
-      setTimeout(() => {
-        resolve(blobUrl);
-      }, 500);
-    });
-};
+export const uploadImage = (file: File): Promise<string> =>
+  new Promise((resolve) => {
+    const url = URL.createObjectURL(file);
+    setTimeout(() => resolve(url), 800);
+});
 
 /*We combine into a service*/
 export const storageService = {
