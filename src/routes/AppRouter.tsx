@@ -1,6 +1,12 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { LoginPage } from '../pages/LoginPage';
-import { FeedPage } from '../pages/FeedPage';
+import { Home } from '../pages/Home';
+import { ProfilePage } from '../pages/ProfilePage';
+import { CreatePost } from '../pages/CreatePost';
+import { PostDetailPage } from '../pages/PostDetailPage';
+import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
+import { MainLayout } from '../components/layout/MainLayout';
 import { useAuthStore } from '../store/useAuthStore';
 
 export const AppRouter = () => {
@@ -9,8 +15,11 @@ export const AppRouter = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />} />
-                <Route path="/feed" element={user ? <FeedPage /> : <Navigate to="/" />} />
+                <Route element={<MainLayout />}>
+                    <Route path="/" element={user ? <Navigate to="/feed" />: <LoginPage />} />
+                    <Route path="/feed" element={user ? <FeedPage /> : <Navigate to="/" />} />
+                </Route>
+                
             </Routes>
         </BrowserRouter>
     );
