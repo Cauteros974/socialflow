@@ -112,13 +112,13 @@ const updateUserProfile = async (
     return updatedUser;
 };
 
-getAppUserFromStorage: (): AppUser | null => {
-    const userJson = localStorage.getItem('appUser');
+const getAppUserFromStorage = (): AppUser | null => {
+    const userJson = localStorage.getItem('currentUser');
     if (!userJson) return null;
     try {
-        return JSON.parse(userJson);
+      return JSON.parse(userJson);
     } catch {
-        return null;
+      return null;
     }
 };
 
@@ -129,4 +129,5 @@ export const authService = {
     getAppUser,
     getUserProfile,
     updateUserProfile,
+    getAppUserFromStorage,
 };
