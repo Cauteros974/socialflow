@@ -21,7 +21,7 @@ const getUserFromStorage = (): AppUser[] => {
 const saveUsersToStorage = (users: AppUser[]) => localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
 export const getAppUserFromStorage = (): AppUser | null => {
     const userJson = localStorage.getItem(CURRENT_USER_STORAGE_KEY);
-    localStorage.setItem('user', JSON.stringify(users));
+    return userJson ? JSON.parse(userJson) : null;
 };
 
 const setCurrentUserInStorage = (user: AppUser | null) => {

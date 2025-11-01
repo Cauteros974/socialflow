@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const registerSchema = z.object({
+export const RegisterSchema = z.object({
   displayName: z
     .string()
     .min(3, { message: 'The name must be at least 3 characters long.' })
@@ -11,13 +11,13 @@ export const registerSchema = z.object({
     .min(6, { message: 'Password must be at least 6 characters.' }),
 });
 
-export const loginSchema = z.object({
+export const LoginSchema = z.object({
   email: z.string().email({ message: 'Invalid email address.' }),
   password: z.string().min(1, { message: 'The password cannot be empty.' }),
 });
 
 
-export const editProfileSchema = z.object({
+export const EditProfileSchema = z.object({
   displayName: z
     .string()
     .min(3, { message: 'The name must be at least 3 characters long.' })
@@ -32,6 +32,6 @@ export const editProfileSchema = z.object({
     .optional(),
 });
 
-export type EditProfileSchema = z.infer<typeof editProfileSchema>;
-export type RegisterFormValues = z.infer<typeof registerSchema>;
-export type LoginFormValues = z.infer<typeof loginSchema>;
+export type EditProfileSchema = z.infer<typeof EditProfileSchema>;
+export type RegisterFormValues = z.infer<typeof RegisterSchema>;
+export type LoginFormValues = z.infer<typeof LoginSchema>;
