@@ -19,8 +19,14 @@ export const AppRouter = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/post/:id" element={<PostDetailPage />} />
                     <Route path="/profile/:uid" element={<ProfilePage />} />
+                    <Route
+                        path='/create-post'
+                        element={user ? <CreatePost /> : <Navigate to="/logib" />}
+                    />
                 </Route>
-                
+
+                <Route path="/login" element={!user ? <Login /> : <Navigate to="/login" />} />
+                <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
             </Routes>
         </BrowserRouter>
     );
