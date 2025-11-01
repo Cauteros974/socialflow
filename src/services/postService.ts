@@ -18,3 +18,18 @@ export const fetchPostsByUserId = async (userId: string): Promise<Post[]> => {
   await simulateDelay(300);
   return mockPosts.filter((p) => p.author.uid === userId).sort((a,b) => b.createdAt - a.createdAt);
 };
+
+export const createPost = async (data: { text: string; imageUrl: string | null; author: Author }): Promise<Post> => {
+    await simulateDelay(600);
+    const newPost: Post = {
+      id: `post_${Date.now()}`,
+      text: data.text,
+      imageUrl: data.imageUrl,
+      author: data.author,
+      createdAt: Date.now(),
+      likes: [],
+      comments: [],
+    };
+    mockPosts.unshift(newPost);
+    return newPost;
+}
