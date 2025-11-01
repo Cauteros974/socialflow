@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { AppUser } from '../types/user';
+import { type AppUser } from '../types/user';
 import { RegisterSchema, LoginSchema, EditProfileSchema } from '../types/schemas';
 import { initialUsers, simulateDelay, mockPosts } from './mockData';
 
@@ -43,7 +43,7 @@ export const registerUser = async (data: RegisterFormData): Promise<AppUser> => 
     uid: `mock_${Date.now()}`,
     email: data.email,
     displayName: data.displayName,
-    photoURL: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
+    photoUrl: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${data.displayName}`,
     bio: '',
     createdAt: Date.now(),
   };
