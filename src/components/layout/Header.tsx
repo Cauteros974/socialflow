@@ -7,25 +7,26 @@ import { authService } from '../../services/authService';
 import { toast } from 'react-hot-toast';
 
 export const Header = () => {
-    const user = useAuthStore((s) => s.user);
-    const setUser = useAuthStore((s) => s.setUser);
-    const { theme, toggleTheme } = useThemeStore();
-    const nav = useNavigate();
+  const user = useAuthStore((s) => s.user);
+  const setUser = useAuthStore((s) => s.setUser);
+  const { theme, toggleTheme } = useThemeStore();
+  const nav = useNavigate();
 
-    const handleLogout = async () => {
-        try{
-            await authService.logoutUser();
-            setUser(null);
-            toast.success('You`re LogOut');
-            nav('/login');
-        }   catch{
-            toast.error('Login Error');
-        }
-    };
-
+  const handleLogout = async () => {
+    try {
+      await authService.logoutUser();
+      setUser(null);
+      toast.success('You are Logout');
+      nav('/login');
+    } catch {
+      toast.error('Login Error');
+    }
+  };
     return(
-        <header className="flex justify-between items-center p-4 shadow-sm border-b">
-            <Link to="/" className="text-xl fond-bold">SocialFlow</Link>
+        <header style={{ borderBottom:'1px solid var(--border-primary)', padding:'8px 12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+            <Link to="/" style={{ display:'flex', gap:8, alignItems:'center', fontWeight:700 }}>
+                <Rss /> SocialFlow
+            </Link>
             <div className="flex items-center gap-3">
                 {user && (
                     <>
