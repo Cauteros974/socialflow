@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom";
-import { useAuthStore } from "../../store/useAuthStore";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Rss, Sun, Moon, Home, PlusSquare, LogOut } from 'lucide-react';
+import { useAuthStore } from '../../store/useAuthStore';
+import { useThemeStore } from '../../store/useThemeStore';
+import { authService } from '../../services/authService';
+import { toast } from 'react-hot-toast';
 
 export const Header = () => {
-    const { user } = useAuthStore();
+    const user = useAuthStore((s) => s.user);
+    const setUser = useAuthStore((s) => s.setUser);
+    const { theme, toggleTheme } = useThemeStore();
+    const nav = useNavigate();
 
     return(
         <header className="flex justify-between items-center p-4 shadow-sm border-b">
