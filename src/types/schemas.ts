@@ -39,6 +39,11 @@ export const createPostSchema = z.object({
     .string()
     .min(1, {message: 'Post text cannot be empty.'})
     .max(500, { message: 'Post text must be at most 500 characters.' }),
+  imageUrl: z
+    .string()
+    .url({ message: 'Invalid image URL.' })
+    .optional()
+    .or(z.literal('').transform(() => undefined)),
 });
 
 export type EditProfileSchema = z.infer<typeof EditProfileSchema>;
