@@ -4,7 +4,7 @@ import { Home } from '../pages/Home';
 import { ProfilePage } from '../pages/ProfilePage';
 import { CreatePost } from '../pages/CreatePost';
 import { PostDetailPage } from '../pages/PostDetailPage';
-import { Login } from '../pages/Login';
+import { LoginPage } from '../pages/LoginPage';
 import { Register } from '../pages/Register';
 import { MainLayout } from '../components/layout/MainLayout';
 import { useAuthStore } from '../store/useAuthStore';
@@ -21,11 +21,11 @@ export const AppRouter = () => {
                     <Route path="/profile/:uid" element={<ProfilePage />} />
                     <Route
                         path='/create-post'
-                        element={user ? <CreatePost /> : <Navigate to="/logib" />}
+                        element={user ? <CreatePost /> : <Navigate to="/login" />}
                     />
                 </Route>
 
-                <Route path="/login" element={!user ? <Login /> : <Navigate to="/login" />} />
+                <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/login" />} />
                 <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
             </Routes>
         </BrowserRouter>
