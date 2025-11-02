@@ -8,7 +8,7 @@ export const MainLayout = () => {
 
     return(
         <div className="app-layout">
-            {/* NAvigation */}
+            {/* Navigation */}
             <header className="app-header">
             <nav className="nav-container">
                 <Link to="/" className="logo">SocialFlow</Link>
@@ -28,6 +28,10 @@ export const MainLayout = () => {
                 </div>
             </nav>
             </header>
+
+            <main className="main-content">
+                <Outlet />
+            </main>
         </div>
-    )
-}
+    );
+};
