@@ -16,6 +16,8 @@ export const MainLayout = () => {
                     (user ?(
                         <>
                             <Link to={`/profile/${user.uid}`}>Profile</Link>
+                            <Link to="/create-post">New Post</Link>
+                            <Button variant="danger" onClick={logout}>LogOut</Button>
                         </>
                     ))
                 </div>
