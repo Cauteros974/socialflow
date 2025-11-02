@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Comment } from '../../types/comment';
+import { type Comment } from '../../types/comment';
 import { formatDateFromNow } from '../../utils/formatDate';
 import { MessageSquare } from 'lucide-react';
 
