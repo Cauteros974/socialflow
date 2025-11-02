@@ -49,3 +49,4 @@ export const createPostSchema = z.object({
 export type EditProfileSchema = z.infer<typeof EditProfileSchema>;
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
+export type createPostSchema = z.infer<typeof createPostSchema>;
