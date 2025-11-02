@@ -11,7 +11,7 @@ export const LikeButton: React.FC<{ postId: string; likes: string[]; }> = ({ pos
 
     return(
         <button onClick={(e) => {e.stopPropagation(); e.preventDefault(); toggle.mutate(); }} disabled={!currentUserId} style={{ background:'none', border:'none', display:'flex', gap:6, alignItems:'center', color: hasLiked ? 'red' : 'inherit' }}>
-            
+            <Heart fill={hasLiked ? 'red': 'none'} /> <span>{likes.length}</span>
         </button>
     )
 };
