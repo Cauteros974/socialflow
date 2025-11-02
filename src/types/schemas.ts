@@ -37,7 +37,7 @@ export const EditProfileSchema = z.object({
 export const createPostSchema = z.object({
   text: z
     .string()
-    .min(1, {message: 'Post text cannot be empty.'})
+    .min(1, { message: 'Post text cannot be empty.' })
     .max(500, { message: 'Post text must be at most 500 characters.' }),
   imageUrl: z
     .string()
@@ -46,7 +46,7 @@ export const createPostSchema = z.object({
     .or(z.literal('').transform(() => undefined)),
 });
 
+export type CreatePostSchema = z.infer<typeof createPostSchema>;
 export type EditProfileSchema = z.infer<typeof EditProfileSchema>;
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
-export type createPostSchema = z.infer<typeof createPostSchema>;
