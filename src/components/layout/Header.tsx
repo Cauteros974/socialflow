@@ -12,6 +12,17 @@ export const Header = () => {
     const { theme, toggleTheme } = useThemeStore();
     const nav = useNavigate();
 
+    const handleLogout = async () => {
+        try{
+            await authService.logoutUser();
+            setUser(null);
+            toast.success('You`re LogOut');
+            nav('/login');
+        }   catch{
+            toast.error('Login Error');
+        }
+    };
+
     return(
         <header className="flex justify-between items-center p-4 shadow-sm border-b">
             <Link to="/" className="text-xl fond-bold">SocialFlow</Link>
