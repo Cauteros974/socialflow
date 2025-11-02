@@ -32,6 +32,15 @@ export const EditProfileSchema = z.object({
     .optional(),
 });
 
+/*Create Post Schema*/
+
+export const createPostSchema = z.object({
+  text: z
+    .string()
+    .min(1, {message: 'Post text cannot be empty.'})
+    .max(500, { message: 'Post text must be at most 500 characters.' }),
+});
+
 export type EditProfileSchema = z.infer<typeof EditProfileSchema>;
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
