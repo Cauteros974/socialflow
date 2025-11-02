@@ -16,34 +16,31 @@ export const Header = () => {
     try {
       await authService.logoutUser();
       setUser(null);
-      toast.success('You are Logout');
+      toast.success('You`re LogOut');
       nav('/login');
     } catch {
-      toast.error('Login Error');
+      toast.error('LogOut Error');
     }
   };
-    return(
-        <header style={{ borderBottom:'1px solid var(--border-primary)', padding:'8px 12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-            <Link to="/" style={{ display:'flex', gap:8, alignItems:'center', fontWeight:700 }}>
-                <Rss /> SocialFlow
-            </Link>
-            <div className="flex items-center gap-3">
-                {user && (
-                    <>
-                        <Link to={`/profile/${user.uid}`} className="flex items-center gap-2">
-                        <img
-                        src={user.photoUrl}
-                        alt={user.displayName}
-                        className="w-8 h-8 rounded-full object-cover"
-                        />
-                        <span>{user.displayName}</span>
-                        </Link>
-                        <Link to="/create-post" className="px-3 py-1 bg-blue-600 text-white rounded-md">
-                            + Post
-                        </Link>
-                    </>
-                )}
-            </div>
-        </header>
-    );
+
+  return (
+    <header style={{ borderBottom:'1px solid var(--border-primary)', padding:'8px 12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+      <Link to="/" style={{ display:'flex', gap:8, alignItems:'center', fontWeight:700 }}>
+        <Rss /> SocialFlow
+      </Link>
+      <div style={{ display:'flex', gap:10, alignItems:'center' }}>
+        <button onClick={toggleTheme} aria-label="toggle theme">{theme==='dark' ? <Sun /> : <Moon />}</button>
+        {user ? (
+          <>
+            <Link to="/"><Home /></Link>
+            <Link to="/create-post"><PlusSquare /></Link>
+            <Link to={`/profile/${user.uid}`}><img src={user.photoUrl} alt={user.displayName} style={{ width:32, height:32, borderRadius:16, objectFit:'cover' }} /></Link>
+            <button onClick={handleLogout}><LogOut /></button>
+          </>
+        ) : (
+          <Link to="/login">LogIn</Link>
+        )}
+      </div>
+    </header>
+  );
 };
