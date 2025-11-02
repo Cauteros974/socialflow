@@ -8,4 +8,8 @@ export const LikeButton: React.FC<{ postId: string; likes: string[]; }> = ({ pos
     const toggle = useToggleLike(postId);
     const currentUserId = user?.uid;
     const hasLiked = currentUserId ? likes.includes(currentUserId) : false;
-}
+
+    return(
+        <button onClick={(e) => {e.stopPropagation(); e.preventDefault(); toggle.mutate(); }}
+    )
+};
