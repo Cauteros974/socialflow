@@ -51,7 +51,7 @@ export const CommentSchema = z.object({
 
 });
 
-export const commentschema = z.object({
+export const commentSchema = z.object({
   
 });
 
@@ -62,4 +62,4 @@ export type LoginFormValues = z.infer<typeof LoginSchema>;
 export type EditProfileSchema = z.infer<typeof EditProfileZodSchema>;
 export type CreatePostSchema = z.infer<typeof CreatePostSchema>;
 export type CommentSchema = z.infer<typeof CommentSchema>;
-export type commentschema = z.infer<typeof commentschema>;
+export type commentschema = z.infer<typeof commentSchema>;
