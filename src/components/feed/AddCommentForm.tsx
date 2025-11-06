@@ -15,7 +15,7 @@ export const AddCommentForm: React.FC<{ postId: string }> = ({ postId }) => {
 
   const onSubmit = (data: CommentSchema) => {
     if (!user) return toast.error('Need to LogIn');
-    addComment.mutate({ text: data.text, author: { uid: user.uid, displayName: user.displayName, photoURL: user.photoURL } }, {
+    addComment.mutate({ text: data.text, author: { uid: user.uid, displayName: user.displayName, photoUrl: user.photoUrl } }, {
       onSuccess: () => reset(),
       onError: (e) => toast.error(getErrorMessage(e)),
     });
