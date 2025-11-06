@@ -47,8 +47,19 @@ export const CreatePostSchema = z.object({
     .or(z.literal('').transform(() => undefined)),
 });
 
+export const CommentSchema = z.object({
+
+});
+
+export const commentschema = z.object({
+  
+});
+
+
 // --- TYPES ---
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
 export type EditProfileSchema = z.infer<typeof EditProfileZodSchema>;
 export type CreatePostSchema = z.infer<typeof CreatePostSchema>;
+export type CommentSchema = z.infer<typeof CommentSchema>;
+export type commentschema = z.infer<typeof commentschema>;
