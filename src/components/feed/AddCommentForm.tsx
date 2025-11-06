@@ -19,4 +19,7 @@ export const AddCommentForm: React.FC<{postId: string}> = ({ postId }) => {
           onSuccess: () => reset(),
           onError: (e) => toast.error(getErrorMessage(e)),
     });
+
+    if(!user) return <p style={{ textAlign: 'center'}}>LogIn to comment</p>;
 };
+
