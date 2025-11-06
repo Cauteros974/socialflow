@@ -11,26 +11,52 @@ import { toast } from 'react-hot-toast';
 export const AddCommentForm: React.FC<{ postId: string }> = ({ postId }) => {
   const user = useAuthStore((s) => s.user);
   const addComment = useAddComment(postId);
-  const { register, handleSubmit, reset, formState:{ errors } } = useForm<CommentSchema>({ resolver: zodResolver(commentSchema) });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<CommentSchema>({ resolver: zodResolver(commentSchema) });
 
   const onSubmit = (data: CommentSchema) => {
     if (!user) return toast.error('Need to LogIn');
-    addComment.mutate({ text: data.text, author: { uid: user.uid, displayName: user.displayName, photoUrl: user.photoUrl } }, {
-      onSuccess: () => reset(),
-      onError: (e) => toast.error(getErrorMessage(e)),
-    });
+
+    addComment.mutate(
+      {
+        text: data.text,
+        author: {
+          uid: user.uid,
+          displayName: user.displayName,
+          photoUrl: user.photoUrl,
+        },
+      },
+      {
+        onSuccess: () => reset(),
+        onError: (e) => toast.error(getErrorMessage(e)),
+      }
+    );
   };
 
-  if (!user) return <p style={{ textAlign:'center' }}>LogIn to comment</p>;
+  if (!user) return <p style={{ textAlign: 'center' }}>Log in to comment</p>;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ display:'flex', gap:8, alignItems:'flex-start', marginTop:12 }}>
-      <img src={user.photoUrl} alt={user.displayName} style={{ width:40, height:40, borderRadius:20 }} />
-      <div style={{ flex:1 }}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginTop: 12 }}
+    >
+      <img
+        src={user.photoUrl}
+        alt={user.displayName}
+        style={{ width: 40, height: 40, borderRadius: 20 }}
+      />
+      <div style={{ flex: 1 }}>
         <input {...register('text')} placeholder="Add a comment..." className="input" />
         {errors.text && <div className="form-error">{errors.text.message}</div>}
       </div>
-      <Button type="submit" isLoading={addComment.isPending}>Send</Button>
+      <Button type="submit" isLoading={addComment.isPending}>
+        Send
+      </Button>
     </form>
   );
 };

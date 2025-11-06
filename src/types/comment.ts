@@ -6,3 +6,4 @@ export interface Comment {
   author: PostAuthor;
   createdAt: number;
 }
+

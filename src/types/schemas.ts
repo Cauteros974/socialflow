@@ -48,11 +48,17 @@ export const CreatePostSchema = z.object({
 });
 
 export const CommentSchema = z.object({
-
+  text: z
+    .string()
+    .min(1, { message: 'Comment cannot be empty' })
+    .max(500, { message: 'Comment is too long' }),
 });
 
 export const commentSchema = z.object({
-  
+  text: z
+    .string()
+    .min(1, { message: 'Comment cannot be empty' })
+    .max(500, { message: 'Comment is too long' }),
 });
 
 
