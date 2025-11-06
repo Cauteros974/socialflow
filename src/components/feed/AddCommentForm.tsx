@@ -12,4 +12,11 @@ export const AddCommentForm: React.FC<{postId: string}> = ({ postId }) => {
     const user = useAuthStore((s) => s.user);
     const addComment = useAddComment(postId);
     const { register, handleSubmit, reset, formState:{ errors } } = useForm<CommentSchema>({ resolver: zodResolver(commentSchema) });
+
+    const onSubmit = (data: CommentSchema) => {
+        if (!user) return toast.error('Need to LogIn');
+        addComment.mutate({ text: data.text, author: { uid: user.uid, displayName: user.displayName, photoURL: user.photoURL } }, {
+          onSuccess: () => reset(),
+          onError: (e) => toast.error(getErrorMessage(e)),
+    });
 };
