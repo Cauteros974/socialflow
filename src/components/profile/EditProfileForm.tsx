@@ -25,6 +25,12 @@ export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => 
                 <Input id="displayName" {...register('displayName')} error={!!errors.displayName} />
                 {errors.displayName && <div className="form-error">{errors.displayName.message}</div>}
             </div>
+            <div>
+                <Label htmlFor="bio">About Myself</Label>
+                <textarea id="bio" {...register('bio')} className="input" />
+                {errors.bio && <div className="form-error">{errors.bio.message}</div>}
+            </div>
+            <Button type="submit" isLoading={upd.isPending}>Save</Button>
         </form>
     )
 };
