@@ -11,7 +11,13 @@ export const PostCatd: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
     return(
         <article onClick={go} style={{border: '1px solid var(--border-primary)', borderRadius: 12, padding: 12, background: 'var(--bg-secondary)', cursor: isDetailView ? 'default': 'pointer'}}>
             <header style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center', marginBottom:8 }}>
-                
+            <Link to={`/profile/${post.author.uid}`} onClick={(e)=>e.stopPropagation()} style={{ display:'flex', gap:8, alignItems:'center' }}>
+                <img src={post.author.photoUrl} alt={post.author.displayName} style={{ width:40, height:40, borderRadius:20 }} />
+                <div>
+                    <div style={{ fontWeight:600 }}>{post.author.displayName}</div>
+                    <div style={{ fontSize:12, color:'var(--text-secondary)' }}>{formatDateFromNow(post.createdAt)}</div>
+                </div>
+            </Link>
             </header>
         </article>
     )
