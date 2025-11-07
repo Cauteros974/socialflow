@@ -22,6 +22,11 @@ export const PostCatd: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
 
             <div style={{ marginBottom: 8}}>{post.text}</div>
             {post.imageUrl && <img src={post.imageUrl} alt="" style={{ width:'100%', borderRadius:8, marginBottom:8 }} />}
+
+            <footer style={{ display:'flex', gap:16, alignItems:'center' }}>
+                <LikeButton postId={post.id} likes={post.likes} />
+                <Link to={`/post/${post.id}`} onClick={(e)=>{ e.stopPropagation(); }} style={{ display:'flex', gap:6, alignItems:'center' }}><MessageSquare />{post.comments.length}</Link>
+            </footer>
         </article>
     )
 }
