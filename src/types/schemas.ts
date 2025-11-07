@@ -61,6 +61,9 @@ export const commentSchema = z.object({
     .max(500, { message: 'Comment is too long' }),
 });
 
+export const editProfileSchema = z.object({
+
+});
 
 // --- TYPES ---
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
@@ -69,3 +72,4 @@ export type EditProfileSchema = z.infer<typeof EditProfileZodSchema>;
 export type CreatePostSchema = z.infer<typeof CreatePostSchema>;
 export type CommentSchema = z.infer<typeof CommentSchema>;
 export type commentschema = z.infer<typeof commentSchema>;
+export type editProfileSchema = z.infer<typeof editProfileSchema>;
