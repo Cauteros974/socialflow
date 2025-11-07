@@ -19,6 +19,9 @@ export const PostCatd: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
                 </div>
             </Link>
             </header>
+
+            <div style={{ marginBottom: 8}}>{post.text}</div>
+            {post.imageUrl && <img src={post.imageUrl} alt="" style={{ width:'100%', borderRadius:8, marginBottom:8 }} />}
         </article>
     )
 }
