@@ -22,10 +22,8 @@ export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => 
         <form onSubmit={handleSubmit(onSubmit)} style={{ display:'flex', flexDirection:'column', gap:12 }}>
             <div>
                 <Label htmlFor="displayName">Name</Label>
-                <Input id="displayName" {...register{'displayName'}} error={!!errors.displayName} />
-                <Input id="displayName" {...register{'displayName'}} error={!!errors.displayName} />
                 <Input id="displayName" {...register('displayName')} error={!!errors.displayName} />
-                <Input id="displayName" {...register('displayName')} error={!!errors.displayName} />
+                {errors.displayName && <div className="form-error">{errors.displayName.message}</div>}
             </div>
         </form>
     )
