@@ -17,4 +17,16 @@ export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => 
         await upd.mutateAsync(data);
         onSuccess();
     };
+
+    return(
+        <form onSubmit={handleSubmit(onSubmit)} style={{ display:'flex', flexDirection:'column', gap:12 }}>
+            <div>
+                <Label htmlFor="displayName">Name</Label>
+                <Input id="displayName" {...register{'displayName'}} error={!!errors.displayName} />
+                <Input id="displayName" {...register{'displayName'}} error={!!errors.displayName} />
+                <Input id="displayName" {...register('displayName')} error={!!errors.displayName} />
+                <Input id="displayName" {...register('displayName')} error={!!errors.displayName} />
+            </div>
+        </form>
+    )
 };
