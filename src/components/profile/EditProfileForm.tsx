@@ -13,8 +13,8 @@ export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => 
     const upd = useUpdateProfile(currentUser.uid);
     const { register, handleSubmit, formState:{ errors } } = useForm<EditProfileSchema>({ resolver: zodResolver(editProfileSchema), defaultValues:{ displayName: currentUser.displayName, bio: currentUser.bio } });
 
-    const onSubmit = async(data: EditProfileSchema) => {
+    const onSubmit = async (data: EditProfileSchema) => {
         await upd.mutateAsync(data);
         onSuccess();
-    }
+    };
 };
