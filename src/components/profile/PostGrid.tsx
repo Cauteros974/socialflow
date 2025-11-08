@@ -14,5 +14,5 @@ export const PostGrid: React.FC<{posts: Post[ ]}> = ({ posts }) => {
                 </Link>
             ))}
         </div>
-    )
-}
+    );
+};
