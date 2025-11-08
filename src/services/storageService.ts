@@ -22,5 +22,14 @@ export const postService = {
   }): Promise<Post>{
     await simulateDelay(500);
     const posts = getPostsFromStorage();
+
+    const newPost: Post = {
+      id: `post_${Date.now()}`,
+      text: data.text,
+      imageUrl: data.imageUrl,
+      author: data.author,
+      likes: [],
+      comments: [],
+    }
   }
 }
