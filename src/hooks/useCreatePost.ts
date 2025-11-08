@@ -1,10 +1,16 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { postService } from '../services/postService';
-import { type Post } from '../types/post';
+import { useAuthStore } from '../store/useAuthStore';
+import { type CreatePostSchema } from '../types/schemas';
+import { toast } from 'react-hot-toast';
+
 export const useCreatePost = () => {
-  const qc = useQueryClient();
+  const queryCliernt = useQueryClient();
+  const user = useAuthStore((s) => s.user);
+
   return useMutation({
-    mutationFn: (data: { text: string; imageUrl: string | null; author: any }) => postService.createPost(data),
-    onSuccess: (newPost: Post) => qc.setQueryData(['posts'], (old: Post[]|undefined) => old ? [newPost, ...old] : [newPost]),
-  });
+    mutationFn: async (data: CreatePostSchema) => {
+      if (!user) throw new Error('You must be logged in to create a post.');
+    }
+  })
 };
