@@ -5,7 +5,7 @@ import { formatDateFromNow } from "../../utils/formatDate";
 import { LikeButton } from "./LikeButton";
 import { MessageSquare } from "lucide-react";
 
-export const PostCatd: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post, isDetailView }) => {
+export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post, isDetailView }) => {
     const navigate = useNavigate();
     const go = () => { if (!isDetailView) navigate('/post/${post:id}'); };
     return(
