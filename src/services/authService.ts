@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { type AppUser } from '../types/user';
-import { RegisterSchema, LoginSchema, EditProfileSchema } from '../types/schemas';
+import { RegisterSchema, LoginSchema, editProfileSchema, type EditProfileSchema } from '../types/schemas';
 import { initialUsers, simulateDelay, mockPosts } from './mockData';
 
 const USERS_STORAGE_KEY = 'socialflow-users';
@@ -9,7 +9,7 @@ const CURRENT_USER_STORAGE_KEY = 'socialflow-currentUser';
 // Inferring types from Zod schemas
 type RegisterFormData = z.infer<typeof RegisterSchema>;
 type LoginFormData = z.infer<typeof LoginSchema>;
-type EditProfileFormData = z.infer<typeof EditProfileSchema>;
+type EditProfileFormData = EditProfileSchema;
 
 const getUsersFromStorage = (): AppUser[] => {
   const usersJson = localStorage.getItem(USERS_STORAGE_KEY);
