@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FileText, MessageSquare, Heart } from 'lucide-react';
 
 export const PostGrid: React.FC<{posts: Post[ ]}> = ({ posts }) => {
-    if (!posts.length) return <p style={{ textAlign:'center', color:'var(--text-secondary)' }}>У пользователя еще нет постов.</p>;
+    if (!posts.length) return <p style={{ textAlign:'center', color:'var(--text-secondary)' }}>The user has no posts yet.</p>;
     return(
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap:8}}>
             {posts.map(p => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { commentSchema, CommentSchema } from '../../types/schemas';
+import { commentSchema, type CommentSchema } from '../../types/schemas';
 import { useAddComment } from '../../hooks/useAddComment';
 import { useAuthStore } from '../../store/useAuthStore';
 import { Button } from '../ui/Button';
