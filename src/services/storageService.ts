@@ -30,6 +30,11 @@ export const postService = {
       author: data.author,
       likes: [],
       comments: [],
-    }
+      createdAt: Date.now(),
+    };
+
+    posts.unshift(newPost);
+    savePostsToStorage(posts);
+    return newPost;
   }
 }
