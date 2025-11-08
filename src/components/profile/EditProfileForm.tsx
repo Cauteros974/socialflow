@@ -1,16 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { type EditProfileSchema } from '../../types/schemas';
+import { type EditProfileSchema, editProfileSchema } from '../../types/schemas';
 import { useUpdateProfile } from '../../hooks/useUpdateProfile';
-/*import { AppUser } from '../../types/user';*/
+import { type AppUser } from '../../types/user';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { Label } from '../ui/Label';
 
 export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => void }> = ({ currentUser, onSuccess }) => {
   const upd = useUpdateProfile(currentUser.uid);
-  const { register, handleSubmit, formState:{ errors } } = useForm<EditProfileSchema>({ resolver: zodResolver(editProfileSchema), defaultValues:{ displayName: currentUser.displayName, bio: currentUser.bio } });
+  const { register, handleSubmit, formState:{ errors } } = useForm<EditProfileSchema>({
+    resolver: zodResolver(editProfileSchema),
+    defaultValues: {
+      displayName: currentUser.displayName,
+      bio: currentUser.bio,
+    },
+  });
 
   const onSubmit = async (data: EditProfileSchema) => {
     await upd.mutateAsync(data);

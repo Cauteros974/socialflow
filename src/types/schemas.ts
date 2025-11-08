@@ -19,7 +19,7 @@ export const LoginSchema = z.object({
 });
 
 // --- EDIT PROFILE ---
-export const EditProfileZodSchema = z.object({
+export const editProfileSchema = z.object({
   displayName: z
     .string()
     .min(3, { message: 'The name must be at least 3 characters long.' })
@@ -35,7 +35,7 @@ export const EditProfileZodSchema = z.object({
 });
 
 // --- CREATE POST ---
-export const CreatePostSchema = z.object({
+export const createPostSchema = z.object({
   text: z
     .string()
     .min(1, { message: 'Post text cannot be empty.' })
@@ -47,13 +47,7 @@ export const CreatePostSchema = z.object({
     .or(z.literal('').transform(() => undefined)),
 });
 
-export const CommentSchema = z.object({
-  text: z
-    .string()
-    .min(1, { message: 'Comment cannot be empty' })
-    .max(500, { message: 'Comment is too long' }),
-});
-
+// --- COMMENT ---
 export const commentSchema = z.object({
   text: z
     .string()
@@ -61,15 +55,9 @@ export const commentSchema = z.object({
     .max(500, { message: 'Comment is too long' }),
 });
 
-export const editProfileSchema = z.object({
-
-});
-
 // --- TYPES ---
 export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
-export type EditProfileSchema = z.infer<typeof EditProfileZodSchema>;
-export type CreatePostSchema = z.infer<typeof CreatePostSchema>;
-export type CommentSchema = z.infer<typeof CommentSchema>;
-export type commentschema = z.infer<typeof commentSchema>;
-export type editProfileSchema = z.infer<typeof editProfileSchema>;
+export type EditProfileSchema = z.infer<typeof editProfileSchema>;
+export type CreatePostSchema = z.infer<typeof createPostSchema>;
+export type CommentSchema = z.infer<typeof commentSchema>;
