@@ -60,4 +60,4 @@ export type RegisterFormValues = z.infer<typeof RegisterSchema>;
 export type LoginFormValues = z.infer<typeof LoginSchema>;
 export type EditProfileSchema = z.infer<typeof editProfileSchema>;
 export type CreatePostSchema = z.infer<typeof createPostSchema>;
-export type CommentSchema = z.infer<typeof commentSchema>;
+export type CommentSchema = z.infer<typeof commentSchema>; 

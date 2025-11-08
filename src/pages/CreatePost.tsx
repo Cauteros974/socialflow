@@ -1,16 +1,17 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CreatePostSchema, type CreatePostSchema as CreatePostType } from '../types/schemas';
+import { createPostSchema, type CreatePostSchema } from '../types/schemas';
 import { useCreatePost } from '../hooks/useCreatePost';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Label } from '../components/ui/Label';
 import { toast } from 'react-hot-toast';
 
+
 export const CreatePost = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<CreatePostType>({
-    resolver: zodResolver(CreatePostSchema),
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<CreatePostSchema>({
+    resolver: zodResolver(createPostSchema),
   });
 
   const createPost = useCreatePost();
