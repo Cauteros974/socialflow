@@ -1,7 +1,6 @@
 import { type Post } from "../types/post";
 import { type AppUser } from "../types/user";
 import { simulateDelay } from "./mockData";
-import { createPost } from "./postService";
 
 const POSTS_STORAGE_KEY = 'socialflow-posts';
 
@@ -36,5 +35,9 @@ export const postService = {
     posts.unshift(newPost);
     savePostsToStorage(posts);
     return newPost;
-  }
-}
+  },
+
+  getAllPosts(): Post[] {
+    return getPostsFromStorage();
+  },
+};
