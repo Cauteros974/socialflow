@@ -10,7 +10,7 @@ export const PostGrid: React.FC<{posts: Post[ ]}> = ({ posts }) => {
             {posts.map(p => (
                 <Link to={`/post/${p.id}`} key={p.id} style={{ position:'relative', paddingTop:'100%', borderRadius:8, overflow:'hidden', background:'#f3f3f3' }}>
                     {p.imageUrl ? <img src={p.imageUrl} alt={p.text.slice(0,20)} style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} /> : <div style={{ position:'absolute', inset:0, display:'flex',alignItems:'center',justifyContent:'center' }}><FileText /></div>}
-                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.15)'}}
+                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.15)'}}></div>
                 </Link>
             ))}
         </div>
