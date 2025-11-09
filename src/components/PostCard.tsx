@@ -37,6 +37,17 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
           transition={{ delay: 0.2 }}
         />
       )}
+
+      <div className="post-card">
+        <div className="post-header">
+            <img src={post.author.photoUrl} alt={post.author.displayName} className="w-10 h-10 rounded-full" />
+            <div>
+                <p className="post-author">{post.author.displayName}</p>
+                <p className="post-time text-sm">{post.timeAgo}</p>
+            </div>
+        </div>
+      </div>
     </motion.div>
+    
   );
 };

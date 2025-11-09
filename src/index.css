@@ -257,3 +257,84 @@
   html, body {
     background-color: #fafafa;
   }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+/* Navbar */
+.navbar {
+  @apply fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50;
+}
+
+.navbar-inner {
+  @apply max-w-4xl mx-auto flex items-center justify-between px-4 py-3;
+}
+
+.nav-link {
+  @apply text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors;
+}
+
+/* Feed container */
+.feed-container {
+  @apply max-w-2xl mx-auto mt-24 flex flex-col gap-6 px-4 pb-10;
+}
+
+/* Post Card */
+.post-card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-4 transition hover:shadow-md;
+}
+
+.post-header {
+  @apply flex items-center gap-3 mb-3;
+}
+
+.post-author {
+  @apply font-semibold text-gray-800 hover:text-blue-600 transition;
+}
+
+.post-time {
+  @apply text-sm text-gray-500;
+}
+
+.post-text {
+  @apply text-gray-800 leading-relaxed mb-3;
+}
+
+.post-image {
+  @apply w-full rounded-xl object-cover mt-2;
+}
+
+/* Button */
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl bg-blue-600 text-white px-4 py-2 font-medium hover:bg-blue-700 active:scale-[0.98] transition-all;
+}
+
+.btn-outline {
+  @apply border border-blue-500 text-blue-600 hover:bg-blue-50;
+}
+
+/* Input */
+.input {
+  @apply w-full rounded-xl border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none px-3 py-2 transition;
+}
+
+/* Card fade-in animation */
+.fade-in {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
