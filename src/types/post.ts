@@ -17,3 +17,14 @@ export interface Post {
   comments: Comment[];
   createdAt: number;
 }
+
+export interface Post {
+  id: string;
+  text: string;
+  imageUrl: string | null;
+  author: PostAuthor;
+  likes: string[];
+  comments: Comment[];
+  createdAt: number;
+  timeAgo?: string;
+}
