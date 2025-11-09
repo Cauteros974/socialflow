@@ -4,6 +4,7 @@ import { useAuthStore } from './store/useAuthStore';
 import { useThemeStore } from './store/useThemeStore';
 import { authService } from './services/authService';
 import { Loader2 } from 'lucide-react';
+import './index.css';
 
 function App() {
   // 1. Getting state and actions from stores
