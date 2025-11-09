@@ -24,6 +24,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </div>
 
       <p className="text-gray-800">{post.text}</p>
+      
+      <div className="transition-all duration-300 hover:scale-[1.02] active:scale-95" />
 
       {post.imageUrl && (
         <motion.img
