@@ -18,7 +18,7 @@ export const Home = () => {
           <PostSkeleton />
         </>
       ) : (
-        posts.map(p => <PostCard key={p.id} post={p} />)
+        posts?.map(p => <PostCard key={p.id} post={p} />)
       )}
     </div>
   );
