@@ -28,7 +28,6 @@ export const MainLayout = () => {
                 </div>
             </nav>
             </header>
-
             <main className="main-content">
                 <Outlet />
             </main>
