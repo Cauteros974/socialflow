@@ -46,8 +46,12 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 <p className="post-time text-sm">{post.timeAgo}</p>
             </div>
         </div>
+
+        <p className="post-text">{post.text}</p>
+        {post.imageUrl && (
+            <img src={post.imageUrl} alt="post" className="post-image" />
+        )}
       </div>
     </motion.div>
-    
   );
 };
