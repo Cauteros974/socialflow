@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
+import { useTheme } from '../../context/ThemeContext';
+import { Sun, Moon } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Link2Icon } from 'lucide-react';
 
@@ -33,5 +35,14 @@ export const MainLayout = () => {
                 <Outlet />
             </main>
         </div>
+    );
+};
+
+export const ThemeToggle = () => {
+    const { theme, toggleTheme } = useTheme();
+    return (
+      <button onClick={toggleTheme} style={{ background: 'none', border: 'none' }}>
+        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+      </button>
     );
 };
