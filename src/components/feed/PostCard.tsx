@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {type Post } from "../../types/post";
 import { formatDateFromNow } from "../../utils/formatDate";
@@ -7,6 +7,7 @@ import { MessageSquare } from "lucide-react";
 
 export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post, isDetailView }) => {
     const navigate = useNavigate();
+    const [loaded, setLoaded ] = useState(false);
     const go = () => { if (!isDetailView) navigate('/post/${post:id}'); };
     return(
         <article onClick={go} style={{border: '1px solid var(--border-primary)', borderRadius: 12, padding: 12, background: 'var(--bg-secondary)', cursor: isDetailView ? 'default': 'pointer'}}>
@@ -28,5 +29,5 @@ export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
                 <Link to={`/post/${post.id}`} onClick={(e)=>{ e.stopPropagation(); }} style={{ display:'flex', gap:6, alignItems:'center' }}><MessageSquare />{post.comments.length}</Link>
             </footer>
         </article>
-    )
-}
+    );
+};
