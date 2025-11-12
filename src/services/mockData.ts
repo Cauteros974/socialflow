@@ -25,6 +25,14 @@ export const MOCK_USER_3: AppUser = {
   bio: '',
   createdAt: Date.now() - 1000 * 10 * 60 * 24 * 10,
 };
+export const MOCK_USER_4: AppUser = {
+  uid: 'mock_user_4',
+  displayName: 'Lisa',
+  email: 'lisa@example.com',
+  photoUrl: 'https://api.dicebear.com/7.x/pixel-art/svg?seed=Lisa',
+  bio: '',
+  createdAt: Date.now() - 1000 * 10 * 60 * 24 * 10,
+};
 
 export let mockPosts: Post[] = [
   {
@@ -53,7 +61,7 @@ export let mockPosts: Post[] = [
     comments: [],
   },
   {
-    id: 'post_1',
+    id: 'post_3',
     text: 'Look at this picture',
     imageUrl: 'https://images.pexels.com/photos/6628960/pexels-photo-6628960.jpeg?auto=compress&cs=tinysrgb&w=600',
     author: { uid: MOCK_USER_3.uid, displayName: MOCK_USER_3.displayName, photoUrl: MOCK_USER_3.photoUrl },
@@ -65,6 +73,22 @@ export let mockPosts: Post[] = [
         text: 'WOW!',
         author: { uid: MOCK_USER_2.uid, displayName: MOCK_USER_2.displayName, photoUrl: MOCK_USER_2.photoUrl },
         createdAt: Date.now() - 1000 * 60 * 3,
+      },
+    ],
+  },
+  {
+    id: 'post_4',
+    text: 'So Funny',
+    imageUrl: 'https://pm1.aminoapps.com/6834/6cf6623319768e1127926b3347e658ddd7656b6dv2_hq.jpg ',
+    author: { uid: MOCK_USER_4.uid, displayName: MOCK_USER_4.displayName, photoUrl: MOCK_USER_4.photoUrl },
+    createdAt: Date.now() - 1000 * 60 * 5,
+    likes: [MOCK_USER_4.uid],
+    comments: [
+      {
+        id: 'comment_1',
+        text: 'WOW!',
+        author: { uid: MOCK_USER_4.uid, displayName: MOCK_USER_4.displayName, photoUrl: MOCK_USER_4.photoUrl },
+        createdAt: Date.now() - 100 * 60 * 3,
       },
     ],
   },
