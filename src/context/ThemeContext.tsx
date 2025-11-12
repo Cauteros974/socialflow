@@ -17,4 +17,13 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
         document.body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }, [theme]);
+
+    const toggleTheme = () =>
+        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+
+    return(
+        <ThemeContext.Provider value={{ theme, toggleTheme}}>
+            {children}
+        </ThemeContext.Provider>
+    )
 }
