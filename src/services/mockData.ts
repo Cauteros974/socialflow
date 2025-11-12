@@ -17,6 +17,14 @@ export const MOCK_USER_2: AppUser = {
   bio: '',
   createdAt: Date.now() - 1000 * 60 * 60 * 24 * 10,
 };
+export const MOCK_USER_3: AppUser = {
+  uid: 'mock_user_3',
+  displayName: 'Max',
+  email: 'max@example.com',
+  photoUrl: 'https://api.dicebear.com/7.x/pixel-art/svg?seed=Max',
+  bio: '',
+  createdAt: Date.now() - 1000 * 10 * 60 * 24 * 10,
+};
 
 export let mockPosts: Post[] = [
   {
@@ -43,6 +51,22 @@ export let mockPosts: Post[] = [
     createdAt: Date.now() - 1000 * 60 * 60 * 2,
     likes: [],
     comments: [],
+  },
+  {
+    id: 'post_1',
+    text: 'Look at this picture',
+    imageUrl: 'https://images.pexels.com/photos/6628960/pexels-photo-6628960.jpeg?auto=compress&cs=tinysrgb&w=600',
+    author: { uid: MOCK_USER_3.uid, displayName: MOCK_USER_3.displayName, photoUrl: MOCK_USER_3.photoUrl },
+    createdAt: Date.now() - 1000 * 60 * 5,
+    likes: [MOCK_USER_2.uid],
+    comments: [
+      {
+        id: 'comment_1',
+        text: 'WOW!',
+        author: { uid: MOCK_USER_2.uid, displayName: MOCK_USER_2.displayName, photoUrl: MOCK_USER_2.photoUrl },
+        createdAt: Date.now() - 1000 * 60 * 3,
+      },
+    ],
   },
 ];
 
