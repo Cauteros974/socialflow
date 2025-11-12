@@ -40,4 +40,17 @@ export const postService = {
   getAllPosts(): Post[] {
     return getPostsFromStorage();
   },
+
+  async uploadImage(file: File): Promise<string> {
+    await simulateDelay(300);
+
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        resolve(reader.result as string);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  },
 };
