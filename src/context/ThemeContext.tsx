@@ -13,4 +13,8 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
         (localStorage.getItem('theme') as Theme) || 'light'
     );
     
+    useEffect(() => {
+        document.body.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 }
