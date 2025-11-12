@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LogOut, Home, PlusSquare, User } from 'lucide-react';
 import { Button } from '../ui/Button';
+import '../index.css';
 
 export const Navbar = () => {
   return (
