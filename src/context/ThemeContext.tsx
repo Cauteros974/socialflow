@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
+import '../index.css';
 
 type Theme = 'light' | 'dark';
 interface ThemeContextType {
