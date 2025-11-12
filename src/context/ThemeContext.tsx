@@ -25,5 +25,7 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
         <ThemeContext.Provider value={{ theme, toggleTheme}}>
             {children}
         </ThemeContext.Provider>
-    )
-}
+    );
+};
+
+export const useTheme = () => useContext(ThemeContext)!;
