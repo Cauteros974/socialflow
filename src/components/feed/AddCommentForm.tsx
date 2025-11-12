@@ -38,7 +38,7 @@ export const AddCommentForm: React.FC<{ postId: string }> = ({ postId }) => {
     );
   };
 
-  if (!user) return <p style={{ textAlign: 'center' }}>Log in to comment</p>;
+  if (!user) return <p style={{ textAlign: 'center' }}>LogIn to comment</p>;
 
   return (
     <form

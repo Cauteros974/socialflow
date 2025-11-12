@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
 import { Button } from '../ui/Button';
+import { Link2Icon } from 'lucide-react';
 
 export const MainLayout = () => {
     const { user, logout } = useAuthStore();
@@ -15,9 +16,9 @@ export const MainLayout = () => {
                 <div className="nav-links">
                     {user ?(
                         <>
-                            <Link to={`/profile/${user.uid}`}>Profile</Link>
-                            <Link to="/create-post">New Post</Link>
-                            <Button variant="danger" onClick={logout}>LogOut</Button>
+                            <Link to={`/profile/${user.uid}`}> 👤 Profile</Link>
+                            <Link to="/create-post">📝 New Post</Link>
+                            <Link onClick={logout}>🚪 LogOut</Link>
                         </>
                     ):(
                         <>

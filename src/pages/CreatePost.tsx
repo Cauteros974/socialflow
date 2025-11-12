@@ -7,6 +7,7 @@ import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Label } from '../components/ui/Label';
 import { toast } from 'react-hot-toast';
+import '../index.css';
 
 
 export const CreatePost = () => {
@@ -46,7 +47,7 @@ export const CreatePost = () => {
         <Input id="image" {...register('imageUrl')} placeholder="https://..." />
       </div>
 
-      <Button type="submit" isLoading={createPost.isPending}>
+      <Button type="submit" isLoading={createPost.isPending} className="button-publish">
         Publish
       </Button>
     </form>
