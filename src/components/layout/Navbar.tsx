@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LogOut, Home, PlusSquare, User } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { useTheme } from '../../context/ThemeContext';
+import {Sun, Moon} from 'lucide-react';
 import '../index.css';
 
 export const Navbar = () => {
@@ -46,5 +48,14 @@ export const Navbar = () => {
         </Button>
       </div>
     </header>
+  );
+};
+
+export const ThemeToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button onClick={toggleTheme} style={{ background: 'none', border: 'none' }}>
+      {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+    </button>
   );
 };
