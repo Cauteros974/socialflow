@@ -24,7 +24,7 @@ export const ProfilePage = () => {
   }
 
   if (!user) {
-    return <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>User not found</p>;
+    return <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>☹️ User not found</p>;
   }
 
   return (
