@@ -31,6 +31,16 @@ export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
             <footer style={{ display:'flex', gap:16, alignItems:'center' }}>
                 <LikeButton postId={post.id} likes={post.likes} />
                 <Link to={`/post/${post.id}`} onClick={(e)=>{ e.stopPropagation(); }} style={{ display:'flex', gap:6, alignItems:'center' }}><MessageSquare />{post.comments.length}</Link>
+                <div className="post-card">
+                    <div className="post-actions">
+                    <button
+                    onClick={() => toggleSave(post)}
+                    className={`save-btn ${saved ? 'saved' : ''}`}
+                    >
+                        
+                    </button>
+                    </div>
+                </div>
             </footer>
         </article>
     );
