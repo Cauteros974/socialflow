@@ -10,6 +10,7 @@ export const PostalModel = ({ post, onClose }) => {
                 <img src={post.imageUrl} alt="" className="modal-img" />
                 <p className="modal-text">{post.text}</p>
             </div>
-        </div>
-    )
-}
+        </div>,
+        document.body
+    );
+};  
