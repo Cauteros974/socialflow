@@ -41,6 +41,12 @@ export const ProfilePage = () => {
       >
         Posts
       </button>
+      <button
+        className={activeTab === 'saved' ? 'active' : ''}
+        onClick={() => setActiveTab('saved')}
+      >
+        Saved
+      </button>
       </div>
     </div>
   );
