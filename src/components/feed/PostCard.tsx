@@ -37,8 +37,9 @@ export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
                     onClick={() => toggleSave(post)}
                     className={`save-btn ${saved ? 'saved' : ''}`}
                     >
-                        {saved ? <BookmarkCheck size={20} /> : <Bookmark size={20} />}
+                        
                     </button>
+                    
                     </div>
                 </div>
             </footer>
