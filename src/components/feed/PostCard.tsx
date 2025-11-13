@@ -34,23 +34,12 @@ export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
                 <div className="post-card">
                     <div className="post-actions">
                     <button
-                        onClick={() => toggleSave(post)}
-                        className={`save-btn ${saved ? 'saved' : ''}`}
+                    onClick={() => toggleSave(post)}
+                    className={`save-btn ${saved ? 'saved' : ''}`}
                     >
-                        Posts
+                        {saved ? <BookmarkCheck size={20} /> : <Bookmark size={20} />}
                     </button>
-                    <button
-                    className={activeTab === 'posts' ? 'active' : ''}
-                    onClick={() => setActiveTab('posts')}
-                    >
-                        Posts
-                    </button>
-                    <button
-                    className={activeTab === 'saved' ? 'active' : ''}
-                    onClick={() => setActiveTab('saved')}
-                    >
-                        Saved
-                    </button>
+                    </div>
                 </div>
             </footer>
         </article>
