@@ -34,7 +34,14 @@ export const ProfilePage = () => {
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '1rem' }}>
       <ProfileHeader profile={user} postCount={posts.length} />
       <PostGrid posts={posts} />
-      
+      <div className="profile-tabs">
+      <button
+          className={activeTab === 'posts' ? 'active' : ''}
+          onClick={() => setActiveTab('posts')}
+      >
+        Posts
+      </button>
+      </div>
     </div>
   );
 };
