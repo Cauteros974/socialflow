@@ -1,0 +1,101 @@
+:root {
+    --bg-color: #fafafa;
+    --text-color: #222;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --accent-color: #0095f6;
+    --transition: 0.3s ease-in-out;
+  }
+  
+  [data-theme='dark'] {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --card-bg: #1a1a1a;
+    --border-color: #333;
+    --accent-color: #0095f6;
+  }
+  
+  /* ==== Main Layout ==== */
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background var(--transition), color var(--transition);
+  }
+  
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent-color);
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  
+  .logout-btn:hover {
+    color: var(--accent-color);
+  }
+  
+  .theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    transform: rotate(20deg);
+    color: var(--accent-color);
+  }
+  
+  .main-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    transition: background var(--transition);
+  }
+  
