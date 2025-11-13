@@ -15,7 +15,13 @@ export const useSavedPostsStore = create <SavedPostState>()(
             toggleSave: (post) => {
                 const { savedPosts } = get();
                 const exists = savedPosts.find((p) => p.id === post.id);
-            }
+
+                if (exists) {
+                    set({ savedPosts: savedPosts.filter((p) => p.id !== post.id )});
+                } else{
+                    set({ savedPosts: [...savedPosts, post] });
+                }
+            },
         })
     )
 )
