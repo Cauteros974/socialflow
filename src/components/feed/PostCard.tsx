@@ -4,6 +4,8 @@ import {type Post } from "../../types/post";
 import { formatDateFromNow } from "../../utils/formatDate";
 import { LikeButton } from "./LikeButton";
 import { MessageSquare } from "lucide-react";
+import { Bookmark, BookmarkCheck } from 'lucide-react';
+import { useSavedPostsStore } from '../../store/useSavedPostsStore';
 
 export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post, isDetailView }) => {
     const navigate = useNavigate();
