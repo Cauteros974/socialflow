@@ -164,3 +164,7 @@ body {
     color: var(--text-color);
     transition: color 0.3s ease;
 }
+
+.save-btn:hover {
+    color: var(--accent-color);
+}
