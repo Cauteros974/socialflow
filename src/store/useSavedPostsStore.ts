@@ -22,6 +22,8 @@ export const useSavedPostsStore = create <SavedPostState>()(
                     set({ savedPosts: [...savedPosts, post] });
                 }
             },
-        })
+            isSaved: (id) => !!get().savedPosts.find((p) => p.id === id),
+        }),
+        {name: 'socila-saved-post'}
     )
 )
