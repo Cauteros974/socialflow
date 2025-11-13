@@ -11,7 +11,7 @@ interface SavedPostState {
 export const useSavedPostsStore = create <SavedPostState>()(
     persist(
         (set, get) => ({
-            savedPost: [],
+            savedPosts: [],
             toggleSave: (post) => {
                 const { savedPosts } = get();
                 const exists = savedPosts.find((p) => p.id === post.id);
