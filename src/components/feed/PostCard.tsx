@@ -11,6 +11,8 @@ export const PostCard: React.FC<{ post: Post; isDetailView?: boolean}> = ({ post
     const navigate = useNavigate();
     const [loaded, setLoaded ] = useState(false);
     const go = () => { if (!isDetailView) navigate('/post/${post:id}'); };
+    const { toggleSave, isSaved } = useSavedPostsStore();
+    const saved = isSaved(post.id);
     return(
         <article onClick={go} style={{border: '1px solid var(--border-primary)', borderRadius: 12, padding: 12, background: 'var(--bg-secondary)', cursor: isDetailView ? 'default': 'pointer'}}>
             <header style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center', marginBottom:8 }}>
