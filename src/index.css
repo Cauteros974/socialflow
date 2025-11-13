@@ -150,3 +150,17 @@ body {
     color: var(--text);
     opacity: 0.7;
 }
+
+.post-action {
+    display: flex;
+    justify-content: flex-end;
+    pad: 0.5rem 1rem;
+}
+
+.save-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
