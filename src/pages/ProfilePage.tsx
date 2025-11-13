@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useUserProfile } from '../hooks/useUserProfile';
 import { useUserPosts } from '../hooks/useUserPosts';
@@ -7,46 +7,61 @@ import { ProfileHeader } from '../components/profile/ProfileHeader';
 import { PostGrid } from '../components/profile/PostGrid';
 import { Loader2 } from 'lucide-react';
 import { type Post } from '../types/post';
+import '../ProfilePage.css';
 
 export const ProfilePage = () => {
   const { uid } = useParams<{ uid: string }>();
   const { data: user, isLoading: userLoading } = useUserProfile(uid!);
   const { data: postsData, isLoading: postsLoading } = useUserPosts(uid!);
   const { savedPosts } = useSavedPostsStore();
-  const [activeTab, setActiveTab] = React.useState<'posts' | 'saved'>('posts');
+  const [activeTab, setActiveTab] = useState<'posts' | 'saved'>('posts');
 
-  // Converting data into an array of posts
+  // Convert the data into an array of posts
   const posts: Post[] = Array.isArray(postsData) ? postsData : postsData ? [postsData] : [];
 
   if (userLoading || postsLoading) {
     return (
-      <div className="flex justify-center py-10">
-        <Loader2 className="animate-spin" size={28} />
+      <div className="loader-center">
+        <Loader2 className="spin" size={28} />
       </div>
     );
   }
 
   if (!user) {
-    return <p style={{ textAlign: 'center', color: 'var(--text-secondary)' }}>☹️ User not found</p>;
+    return <p className="text-center muted">☹️ User not found</p>;
   }
 
   return (
-    <div style={{ maxWidth: 800, margin: '0 auto', padding: '1rem' }}>
+    <div className="profile-page">
       <ProfileHeader profile={user} postCount={posts.length} />
-      <PostGrid posts={posts} />
+
       <div className="profile-tabs">
-      <button
-          className={activeTab === 'posts' ? 'active' : ''}
+        <button
+          className={`tab-btn ${activeTab === 'posts' ? 'active' : ''}`}
           onClick={() => setActiveTab('posts')}
-      >
-        Posts
-      </button>
-      <button
-        className={activeTab === 'saved' ? 'active' : ''}
-        onClick={() => setActiveTab('saved')}
-      >
-        Saved
-      </button>
+        >
+          📸 Posts
+        </button>
+        <button
+          className={`tab-btn ${activeTab === 'saved' ? 'active' : ''}`}
+          onClick={() => setActiveTab('saved')}
+        >
+          💾 Saved
+        </button>
+      </div>
+
+      <div className="profile-content">
+        {activeTab === 'posts' ? (
+          posts.length > 0 ? (
+            <PostGrid posts={posts} />
+          ) : (
+            <p className="empty">No posts yet</p>
+          )
+        ) : savedPosts.length > 0 ? (
+          <PostGrid posts={savedPosts} />
+        ) : (
+          <p className="empty">No saved posts yet</p>
+        )}
       </div>
     </div>
   );
