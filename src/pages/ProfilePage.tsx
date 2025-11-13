@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useUserProfile } from '../hooks/useUserProfile';
 import { useUserPosts } from '../hooks/useUserPosts';
+import { useSavedPostsStore } from '../store/useSavedPostsStore';
 import { ProfileHeader } from '../components/profile/ProfileHeader';
 import { PostGrid } from '../components/profile/PostGrid';
 import { Loader2 } from 'lucide-react';
@@ -11,6 +12,8 @@ export const ProfilePage = () => {
   const { uid } = useParams<{ uid: string }>();
   const { data: user, isLoading: userLoading } = useUserProfile(uid!);
   const { data: postsData, isLoading: postsLoading } = useUserPosts(uid!);
+  const { savedPosts } = useSavedPostsStore();
+  const [activeTab, setActiveTab] = React.useState<'posts' | 'saved'>('posts');
 
   // Converting data into an array of posts
   const posts: Post[] = Array.isArray(postsData) ? postsData : postsData ? [postsData] : [];
