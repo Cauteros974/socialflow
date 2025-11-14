@@ -172,7 +172,7 @@ body {
     font-weight: 500;
 }
 
-/* === THEME SUPPORT === */
+/* Theme Support */
 :root {
     --bg: #f9fafb;
     --text: #111827;
@@ -214,7 +214,7 @@ body {
     color: var(--text);
 }
 
-/* === PROFILE STATS === */
+/* Profile Stats */
 .profile-stats {
     display: flex;
     justify-content: space-around;
@@ -236,7 +236,7 @@ body {
     margin-top: 0.25rem;
 }
 
-/* === POST ACTIONS === */
+/* Post Actions */
 .post-action {
     display: flex;
     justify-content: flex-end;
@@ -263,7 +263,7 @@ body {
     color: var(--accent-color);
 }
 
-/* === RESPONSIVE === */
+/* Responsive */
 @media (max-width: 768px) {
     .app-header {
         padding: 1rem;
@@ -283,7 +283,7 @@ body {
     }
 }
 
-/* === ANIMATIONS === */
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
