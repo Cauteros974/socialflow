@@ -5,7 +5,7 @@ import { formatDateFromNow } from "../../utils/formatDate";
 import { LikeButton } from "./LikeButton";
 import { MessageSquare, Bookmark, BookmarkCheck } from 'lucide-react';
 import { useSavedPostsStore } from '../../store/useSavedPostsStore';
-import { PostModal } from "./PostModal";
+import { PostModal } from "./PostModal";    
 
 interface PostCardProps {
   post: Post;
