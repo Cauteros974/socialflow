@@ -1,6 +1,11 @@
 import React from "react";
 import { createPortal } from "react-dom";
 
+interface PostModalProps{
+    post: Post | null;
+    onClose: () => void;
+}
+
 export const PostModal = ({ post, onClose }) => {
     if(!post) return null;
 
