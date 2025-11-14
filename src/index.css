@@ -1,4 +1,4 @@
-/* === BASE STYLES === */
+/* Base Styles */
 body {
     margin: 0;
     font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
@@ -6,14 +6,14 @@ body {
     min-height: 100vh;
 }
 
-/* === LAYOUT === */
+/* Layout */
 .app-layout {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* === HEADER & NAVIGATION === */
+/* Header & Navigation */
 .app-header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
