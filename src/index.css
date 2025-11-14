@@ -70,7 +70,7 @@ body {
     transform: scale(0.97);
 }
 
-/* === BUTTONS === */
+/* Buttons */
 .button {
     padding: 0.75rem 1.5rem;
     border: none;
@@ -120,7 +120,7 @@ body {
     cursor: not-allowed;
 }
 
-/* === MAIN CONTENT === */
+/* Main Content */
 .main-content {
     flex: 1;
     padding: 3rem 2rem;
@@ -129,7 +129,7 @@ body {
     width: 100%;
 }
 
-/* === CREATE POST FORM === */
+/* Create Post Form */
 .max-w-xl {
     background: white;
     border-radius: 20px;
