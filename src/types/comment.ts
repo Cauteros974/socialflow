@@ -1,9 +1,10 @@
-import { type PostAuthor } from './post';
-
 export interface Comment {
   id: string;
   text: string;
-  author: PostAuthor;
+  author: {
+    uid: string;
+    displayName: string;
+    photoUrl?: string;
+  };
   createdAt: number;
 }
-

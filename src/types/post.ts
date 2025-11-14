@@ -12,19 +12,36 @@ export interface Post {
   id: string;
   text: string;
   imageUrl: string | null;
-  author: PostAuthor;
-  likes: string[];
-  comments: Comment[];
+  author: {
+    uid: string;
+    displayName: string;
+    photoUrl?: string;
+  };
   createdAt: number;
+
+  comments: Comment[];
 }
 
 export interface Post {
   id: string;
   text: string;
   imageUrl: string | null;
-  author: PostAuthor;
   likes: string[];
   comments: Comment[];
   createdAt: number;
   timeAgo?: string;
+}
+
+export interface Post {
+  id: string;
+  text: string;
+  imageUrl: string | null;
+  author: {
+    uid: string;
+    displayName: string;
+    photoUrl?: string;
+  };
+  createdAt: number;
+
+  comments: Comment[];
 }
