@@ -1,7 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 
-export const PostalModel = ({ post, onClose }) => {
+export const PostModal = ({ post, onClose }) => {
     if(!post) return null;
 
     return createPortal(
