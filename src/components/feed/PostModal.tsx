@@ -1,5 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import { type Post } from "../../types/post";
 
 interface PostModalProps{
     post: Post | null;
