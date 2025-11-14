@@ -7,6 +7,7 @@ import { type AppUser } from '../../types/user';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { Label } from '../ui/Label';
+import '../../modal.css';
 
 export const EditProfileForm: React.FC<{ currentUser: AppUser; onSuccess: () => void }> = ({ currentUser, onSuccess }) => {
   const upd = useUpdateProfile(currentUser.uid);
