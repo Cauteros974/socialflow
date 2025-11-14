@@ -13,5 +13,11 @@
     padding: 1rem;
     border-radius: 16px;
     max-width: 90%;
-    animation: radeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-img{
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
 }
