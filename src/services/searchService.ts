@@ -10,7 +10,9 @@ export const searchService = {
         const q = query.toLowerCase();
 
         return users.filter(
-            u => u.displayName.toLowerCase().includes(q) ||
+            u => 
+                u.displayName.toLowerCase().includes(q) ||
+                u.email.toLowerCase().includes(q)
         )
     }
 }
