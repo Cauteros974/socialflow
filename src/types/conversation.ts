@@ -1,4 +1,4 @@
-import { string } from "zod";
+import { boolean, string } from "zod";
 import { Author } from "./user";
 
 export default  Message{
@@ -6,4 +6,6 @@ export default  Message{
     conversationId: string;
     sender: Author;
     text: string;
+    createAt: number;
+    read?: boolean;
 }
