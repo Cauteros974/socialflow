@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { searchService } from "../services/searchService";
+import { use } from "react";
 
 export const useSearch = (query: string) => {
     return useQuery({
@@ -11,6 +12,8 @@ export const useSearch = (query: string) => {
                 searchService.searchPosts(query),
                 searchService.searchUsers(query)
             ]);
+
+            return{users, posts};
         }
     })
 }
