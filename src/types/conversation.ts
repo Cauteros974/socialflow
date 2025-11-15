@@ -9,3 +9,9 @@ export default  Message{
     createAt: number;
     read?: boolean;
 }
+
+export interface Conversation{
+    id: string;
+    participants: Author[];
+    
+}
