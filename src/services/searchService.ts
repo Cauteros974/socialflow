@@ -1,12 +1,12 @@
+import { authService } from "./authService";
 import { mockPosts } from "./mockData";
-import { getUsersFromStorage } from "./authService";
 import { simulateDelay } from "./mockData";
 
 export const searchService = {
     searchUsers: async (query: string) => {
         await simulateDelay(200);
 
-        const users = getUsersFromStorage();
+        const users = authService.getUsersFromStorage();
         const q = query.toLowerCase();
 
         return users.filter(
