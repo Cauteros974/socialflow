@@ -19,6 +19,6 @@ export const searchService = {
     searchPosts: async (query: string) => {
         await simulateDelay(200);
 
-        const q = query.toLowerCase;
+        const q = query.toLowerCase();
     }
 }
