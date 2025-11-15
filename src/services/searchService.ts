@@ -9,6 +9,8 @@ export const searchService = {
         const users = getUsersFromStorage();
         const q = query.toLowerCase();
 
-        
+        return users.filter(
+            u => u.displayName.toLowerCase().includes(q) ||
+        )
     }
 }
