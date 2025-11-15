@@ -20,5 +20,11 @@ export const searchService = {
         await simulateDelay(200);
 
         const q = query.toLowerCase();
+
+        return mockPosts.filter(
+            p =>
+                p.text.toLowerCase().includes(q) ||
+                p.author.displayName.toLowerCase().includes(q)
+        );
     }
-}
+};
