@@ -11,7 +11,7 @@ type RegisterFormData = z.infer<typeof RegisterSchema>;
 type LoginFormData = z.infer<typeof LoginSchema>;
 type EditProfileFormData = EditProfileSchema;
 
-const getUsersFromStorage = (): AppUser[] => {
+export const getUsersFromStorage = (): AppUser[] => {
   const usersJson = localStorage.getItem(USERS_STORAGE_KEY);
   if (usersJson) return JSON.parse(usersJson);
   localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(initialUsers));
