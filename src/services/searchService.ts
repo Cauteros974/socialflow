@@ -13,6 +13,12 @@ export const searchService = {
             u => 
                 u.displayName.toLowerCase().includes(q) ||
                 u.email.toLowerCase().includes(q)
-        )
+        );
+    },
+
+    searchPosts: async (query: string) => {
+        await simulateDelay(200);
+
+        const q = query.toLowerCase();
     }
 }
