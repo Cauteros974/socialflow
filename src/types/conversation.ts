@@ -13,5 +13,6 @@ export default  Message{
 export interface Conversation{
     id: string;
     participants: Author[];
-    
+    lastMessage?: Message;
+    updatedAt: number;
 }
