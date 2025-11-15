@@ -15,5 +15,5 @@ export const useSearch = (query: string) => {
 
             return{users, posts};
         }
-    })
-}
+    });
+};
