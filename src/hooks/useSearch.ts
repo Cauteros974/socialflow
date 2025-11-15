@@ -6,6 +6,11 @@ export const useSearch = (query: string) => {
         queryKey:["search", query],
         queryFn: async () => {
             if (!query.trim()) return {users: [], posts: []};
+
+            const [users, posts] = await Promise.all([
+                searchService.searchPosts(query),
+                searchService.searchUsers(query)
+            ]);
         }
     })
 }
