@@ -29,21 +29,21 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
    
    “Saved Posts” tab
 
-🌙 Light & Dark Theme
+**🌙 Light & Dark Theme**
 
-   **Theme switcher in the navbar**
+   Theme switcher in the navbar
    
-   **Theme persistence via localStorage**
+   Theme persistence via localStorage
    
-   **Smooth transitions between themes**
+   Smooth transitions between themes
 
-📱 Mobile-Friendly
+**📱 Mobile-Friendly**
 
-   **Adaptive layout for small screens**
+   Adaptive layout for small screens
    
-   **Mobile sidebar**
+   Mobile sidebar
    
-   **Modal post viewer**
+   Modal post viewer
 
 # Technologies and Libraries
 
