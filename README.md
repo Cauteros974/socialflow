@@ -10,30 +10,39 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 📰 Feed System
 
   **Image optimization and lazy loading**
+  
   **Post cards layout**
+  
   **Mobile post view as a modal**
 
 ❤️ Post Interactions
 
    **Likes**
+   
    **Save/unsave posts**
 
 👤 User Profiles
 
    **Avatar, bio, social links**
+   
    **Grid layout for posts**
+   
    **“Saved Posts” tab**
 
 🌙 Light & Dark Theme
 
    **Theme switcher in the navbar**
+   
    **Theme persistence via localStorage**
+   
    **Smooth transitions between themes**
 
 📱 Mobile-Friendly
 
    **Adaptive layout for small screens**
+   
    **Mobile sidebar**
+   
    **Modal post viewer**
 
 # Technologies and Libraries
