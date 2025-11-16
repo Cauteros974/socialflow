@@ -6,3 +6,8 @@ The project is built on the principles of modularity, performance, and extensibi
 The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 ![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img1.png)
+![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img2.png)
+![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img3.png)
+![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img4.png)
+![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img5.png)
+![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img6.png)
