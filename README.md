@@ -7,13 +7,13 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 # Core Features
 
-📰 Feed System
+**📰 Feed System**
 
-  **Image optimization and lazy loading**
+  Image optimization and lazy loading
   
-  **Post cards layout**
+  Post cards layout
   
-  **Mobile post view as a modal**
+  Mobile post view as a modal
 
  **❤️ Post Interactions**
 
@@ -21,13 +21,13 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
    
    Save/unsave posts
 
-👤 User Profiles
+**👤 User Profiles**
 
    Avatar, bio, social links
    
-   **Grid layout for posts**
+   Grid layout for posts
    
-   **“Saved Posts” tab**
+   “Saved Posts” tab
 
 🌙 Light & Dark Theme
 
