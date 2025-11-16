@@ -15,7 +15,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 ❤️ Post Interactions
 
-   **Likes**
+     **Likes**
    **Save/unsave posts**
 
 👤 User Profiles
