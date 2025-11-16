@@ -5,9 +5,38 @@ SocialFlow is a modern, lightweight, and user-friendly social networking web app
 The project is built on the principles of modularity, performance, and extensibility.
 The primary focus is high-quality UI/UX and high-speed front-end performance.
 
+# Core Features
+
+📰 Feed System
+  **Image optimization and lazy loading**
+  **Post cards layout**
+  **Mobile post view as a modal**
+
+❤️ Post Interactions
+   **Likes**
+   **Save/unsave posts**
+
+
+👤 User Profiles
+   **Avatar, bio, social links**
+   **Grid layout for posts**
+   **“Saved Posts” tab**
+
+🌙 Light & Dark Theme
+
+   **Theme switcher in the navbar**
+   **Theme persistence via localStorage**
+   **Smooth transitions between themes**
+
+📱 Mobile-Friendly
+
+   **Adaptive layout for small screens**
+   **Mobile sidebar**
+   **Modal post viewer**
+
 # Technologies and Libraries
 
-#Main Stack
+⚛️ #Main Stack
 
 | Category         | Technology                 |
 | ---------------- | -------------------------- |
@@ -20,7 +49,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 | Icons            | lucide-react               |
 
             
-#Helper Libraries
+🧰 #Helper Libraries
 
 | Purpose    | Library                |
 | ---------- | ---------------------- |
@@ -28,7 +57,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 | Classnames | clsx                   |
 | HTTP       | Axios or fetch wrapper |
 
-#Styling 
+🎨 #Styling 
 
 | Purpose    | Library                           |
 | ---------- | --------------------------------- |
