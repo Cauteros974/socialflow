@@ -7,7 +7,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 # Technologies and Libraries
 
-                #Main Stack
+#Main Stack
 
 | Category         | Technology                 |
 | ---------------- | -------------------------- |
@@ -20,7 +20,24 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 | Icons            | lucide-react               |
 
             
-                #Helper Libraries
+#Helper Libraries
+
+| Purpose    | Library                |
+| ---------- | ---------------------- |
+| Dates      | dayjs or date-fns      |
+| Classnames | clsx                   |
+| HTTP       | Axios or fetch wrapper |
+
+#Styling 
+
+| Purpose    | Library                           |
+| ---------- | --------------------------------- |
+| Components | Custom UI components              |
+| Theming    | Custom ThemeContext               |
+| Animations | Framer Motion (optional)          |
+| CSS        | CSS modules / SCSS / standard CSS |
+
+
 
 
 ![alt text](https://github.com/Cauteros974/socialflow/blob/main/src/assets/images/img1.png)
