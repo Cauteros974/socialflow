@@ -9,7 +9,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 **📰 Feed System**
 
-  Image optimization and lazy loading
+  •Image optimization and lazy loading
   
   Post cards layout
   
