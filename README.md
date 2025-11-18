@@ -13,13 +13,13 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
   
   • Post cards layout
   
-  Mobile post view as a modal
+  • Mobile post view as a modal
 
  **❤️ Post Interactions**
 
-   Likes
+   •Likes
    
-   Save/unsave posts
+   • Save/unsave posts
 
 **👤 User Profiles**
 
