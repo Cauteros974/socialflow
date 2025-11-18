@@ -27,7 +27,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
    
    • Grid layout for posts
    
-   “Saved Posts” tab
+   • "Saved Posts” tab
 
 **🌙 Light & Dark Theme**
 
