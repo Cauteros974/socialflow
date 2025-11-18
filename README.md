@@ -11,7 +11,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
   • Image optimization and lazy loading
   
-  Post cards layout
+  • Post cards layout
   
   Mobile post view as a modal
 
