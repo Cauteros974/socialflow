@@ -23,9 +23,9 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 **👤 User Profiles**
 
-   Avatar, bio, social links
+   • Avatar, bio, social links
    
-   Grid layout for posts
+   • Grid layout for posts
    
    “Saved Posts” tab
 
