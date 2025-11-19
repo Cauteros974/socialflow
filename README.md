@@ -15,7 +15,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
   
   • Mobile post view as a modal
 
- **❤️ Post Interactions**
+**❤️ Post Interactions**
 
    •Likes
    
