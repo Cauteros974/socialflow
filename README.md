@@ -47,7 +47,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 # Technologies and Libraries
 
-⚛️ #Main Stack
+⚛️ **#Main Stack**
 
 | Category         | Technology                 |
 | ---------------- | -------------------------- |
