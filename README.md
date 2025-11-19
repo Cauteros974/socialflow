@@ -60,7 +60,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 | Icons            | lucide-react               |
 
             
-🧰 #Helper Libraries
+🧰 **#Helper Libraries**
 
 | Purpose    | Library                |
 | ---------- | ---------------------- |
@@ -68,7 +68,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 | Classnames | clsx                   |
 | HTTP       | Axios or fetch wrapper |
 
-🎨 #Styling 
+🎨 **#Styling**
 
 | Purpose    | Library                           |
 | ---------- | --------------------------------- |
