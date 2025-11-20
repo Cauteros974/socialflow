@@ -51,7 +51,7 @@ The primary focus is high-quality UI/UX and high-speed front-end performance.
 
 | Category         | Technology                 |
 | ---------------- | -------------------------- |
-| UI               | **React**                  |
+| UI               | **[![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)**                  |
 | Routing          | **react-router-dom**       |
 | State management | **Zustand**                |
 | Form handling    | react-hook-form (optional) |
